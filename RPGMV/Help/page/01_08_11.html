@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>コモンイベントの設定</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v03">コモンイベントの設定</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_08.html">データベース</a></li>
+			<li>&gt;</li>
+			<li>コモンイベントの設定</li>
+		</ul>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">データの役割</h2>
+			<p>
+				コモンイベントとは、ゲーム中に任意のタイミングで実行できるイベントのことです。プレイの状況を定期的に監視したり、アイテムやスキルを使用時に何らかの処理を行なうなど、ゲーム全体で汎用的に実行する処理を定義できます。作成したコモンイベントは、［コモンイベント］のイベントコマンドや、特定のスイッチを［ON］にする処理によって実行できます。
+			</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">設定項目の内容</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_08_11_img01.png" width="769" height="631" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">
+				基本設定
+			</h3>
+			<h3 class="main__title--h3--sub">
+				名前
+			</h3>
+			<p>コモンイベントの名前です。この名前はエディターのみで使用されます（プレイ中のゲームへの影響はありません）。</p>
+
+			<h3 class="main__title--h3--sub">
+				トリガー
+			</h3>
+			<p>［実行内容］の処理を開始するタイミングを以下から指定します。なお［自動実行］と［並列処理］はマップ画面を表示中のみ有効です。</p>
+			<dl class="main__dl--sub">
+				<dt>なし </dt>
+				<dd>スキル、アイテム、他のイベントなどから明示的に呼び出されたときのみ処理を開始します。</dd>
+				<dt>自動実行 </dt>
+				<dd>［スイッチ］に指定したスイッチがONになったときに処理を開始します。</dd>
+				<dt>並列処理 </dt>
+				<dd>［スイッチ］に指定したスイッチがONになったときに処理を開始し、実行内容の処理を周期的に繰り返します。</dd>
+			</dl>
+
+			<h3 class="main__title--h3--sub">
+				スイッチ
+			</h3>
+			<p>トリガーに［自動実行］または［並列処理］を指定した場合、処理開始の合図となるスイッチを指定します。同じスイッチを指定したコモンイベントが複数ある場合、ID番号が最も若いもの（リストの上にあるもの）が実行対象になります。</p>
+
+			<h3 class="main__title--h3">
+				実行内容
+			</h3>
+			<p>コモンイベントで実行する処理を、イベントコマンドをもとに設定します。編集方法はマップイベントの［<a href="01_09_03.html#p03">実行内容</a>］と同じです。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">自動実行、並列処理のトリガーを使用する場合の注意</h2>
+			<p>トリガーに［自動実行］または［並列処理］に指定したイベントは、［スイッチ］に指定したスイッチの値が［ON］になっている間、［実行内容］の処理が繰り返し行なわれます。<br />
+				<br />
+				この繰り返し処理を止めるには、条件としているスイッチの値を［OFF］にする措置が必要です。こうした制御を行なわないと、処理の内容によってはプレイヤーが一切操作できなくなる可能性があります。<br />
+				<br />
+				テストプレイ中に操作不能になった場合は、ゲームのウィンドウを［×］ボタンで閉じるか、［Alt］＋［F4］キーを押して強制終了してください。
+			</p>
+		</div><!-- /main__section -->
+
+
+	</div><!-- /main -->
+
+</body>
+</html>

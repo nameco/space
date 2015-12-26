@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>メッセージ</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">メッセージ</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>メッセージ</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">文章の表示</h2>
+
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_01_img01.png" width="586" height="264" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">
+				機能
+			</h3>
+			<p>メッセージウィンドウを開き、文章を表示します。</p>
+
+			<h3 class="main__title--h3--sub">
+				設定項目
+			</h3>
+			<dl class="main__dl--sub">
+				<dt>顔</dt>
+				<dd>メッセージウィンドウ内の左端に表示する顔画像を指定します。ダブルクリックすると表示される［画像の選択］のウィンドウで画像を指定します。</dd>
+
+				<dt>文章</dt>
+				<dd>表示する文章を入力します。1回につきメッセージウィンドウに4行までの文章を表示可能です。2行目以降に文字を表示するには［Enter］キーで改行します。</dd>
+
+				<dt>背景</dt>
+				<dd>文章を表示するメッセージウィンドウの形式を選択します。</dd>
+
+				<dt>ウィンドウ位置</dt>
+				<dd>メッセージウィンドウの表示位置を［下］［中］［上］のいずれかで指定します。</dd>
+
+				<dt>プレビュー</dt>
+				<dd>クリックすると文章の実際の表示を確認できます。</dd>
+
+				<dt>一括入力</dt>
+				<dd>有効にすると、一度に4行を超えて文章を入力できるようになります。4行を超える文章は、4行ごとに複数の［文章の表示］のイベントコマンドに分割したうえで実行内容のリストに設定されます。</dd>
+			</dl>
+
+			<h3 class="main__title--h3--sub">
+				備考
+			</h3>
+			<ul class="main__ul">
+				<li>文章の入力中に［Ctrl］＋［Enter］のキーを押すと、［OK］ボタンをクリックしたときと同じ動作になります。</li>
+				<li>［文章］の欄の縦線はメッセージウィンドウに表示可能な文字数の目安を表します。文章が意図したとおりに表示されるかを［プレビュー］で確認しながら入力してください。</li>
+				<li>文章に制御文字を入力すると、変数の値やアクターの名前などを表示できます。制御文字と表示する内容は以下のとおりです。制御文字は必ず半角で入力してください。</li>
+			</ul>
+
+			<table class="main__table--type01">
+				<tr>
+					<th>\V[n]</th>
+					<td>変数n番の値に置き換えられます。</td>
+				</tr>
+				<tr>
+					<th>\N[n]</th>
+					<td>アクターn番の名前に置き換えられます。</td>
+				</tr>
+				<tr>
+					<th>\P[n]</th>
+					<td>パーティメンバーn番（並び順）の名前に置き換えられます。</td>
+				</tr>
+				<tr>
+					<th>\G</th>
+					<td>通貨単位の文字に置き換えられます。</td>
+				</tr>
+				<tr>
+					<th>\C[n]</th>
+					<td>以降の文字をn番の色で表示します。文字色は、システム画像［Window.png］の内容に準じます。</td>
+				</tr>
+				<tr>
+					<th>\I[n]</th>
+					<td>アイコンn番を描画します。</td>
+				</tr>
+				<tr>
+					<th>\{</th>
+					<td>文字サイズを1段階大きくします。</td>
+				</tr>
+				<tr>
+					<th>\}</th>
+					<td>文字サイズを1段階小さくします。</td>
+				</tr>
+				<tr>
+					<th>\\</th>
+					<td>バックスラッシュに置き換えられます。</td>
+				</tr>
+				<tr>
+					<th>\$</th>
+					<td>所持金のウィンドウを開きます。</td>
+				</tr>
+				<tr>
+					<th>\.</th>
+					<td>文章の表示を1/4秒間停止します。</td>
+				</tr>
+				<tr>
+					<th>\|</th>
+					<td>文章の表示を1秒間停止します。</td>
+				</tr>
+				<tr>
+					<th>\!</th>
+					<td>文章の途中でボタンの入力待ちを行ないます。</td>
+				</tr>
+				<tr>
+					<th>\></th>
+					<td>同じ行にある残りの文字を一瞬で表示します。</td>
+				</tr>
+				<tr>
+					<th>\<</th>
+					<td>文字を一瞬で表示する効果を取り消します。</td>
+				</tr>
+				<tr>
+					<th>\^</th>
+					<td>文章表示後にボタン入力を待たないようにします。</td>
+				</tr>
+			</table>
+			<p class="mb0px">
+				※制御文字 \V,\N,\P,\G,\C,\I,\\ は、以下の場所でも使用できます。
+			</p>
+
+			<ul class="main__ul">
+				<li>イベントコマンド［<a href="#p02">選択肢の表示</a>］</li>
+				<li>データベース［<a href="01_08_01.html">アクターの設定</a>］の［プロフィール］</li>
+				<li>データベース［<a href="01_08_03.html">スキルの設定</a>］の［メッセージ］</li>
+				<li>データベース［<a href="01_08_04.html">アイテムの設定</a>］と［<a href="01_08_05.html">武器・防具の設定</a>］の［説明］</li>
+				<li>データベース［<a href="01_08_08.html">ステートの設定</a>］の［メッセージ］</li>
+				<li>データベース［<a href="01_08_14.html">用語の設定</a>］の［メッセージ］内の項目、［セーブメッセージ］と［ロードメッセージ］</li>
+				<li>データベース［<a href="01_08_14.html">用語の設定</a>］の［メッセージ］内の項目、［パーティ名］以下、戦闘中に用いられるメッセージ（ウィンドウで表示されるものは、\$ \. \| \! \> \< \^も使用可能）</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">選択肢の表示</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_01_img02.png" width="412" height="306" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>選択肢ウィンドウ（6択まで）を表示し、プレイヤーの選択に応じて処理を分岐させます。メッセージと同様に制御文字を使用することができます。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>選択肢（1～6）</dt>
+				<dd>選択肢の語句を指定します。表示しない選択肢は空白にします。</dd>
+				<dt>背景</dt>
+				<dd>選択肢の背景タイプを指定します。</dd>
+				<dt>ウィンドウ位置</dt>
+				<dd>選択肢の画面上の表示位置を指定します。</dd>
+				<dt>デフォルト</dt>
+				<dd>カーソルの初期位置を指定します。</dd>
+				<dt>キャンセル</dt>
+				<dd>キャンセルボタンが押されたときの処理方法を指定します。</dd>
+			</dl>
+
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>設定項目を決定すると、［実行内容］にそれぞれの選択肢（キャンセルを含む）に対応する分岐が作られます。これらの分岐に、選択肢を選んだ後に実行する内容を設定します。</li>
+			</ul>
+
+			<p></p>
+
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">数値入力の処理</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_01_img03.png" width="222" height="189" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>数値の入力画面を表示し、プレイヤーが入力した値を変数に代入します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>変数</dt>
+				<dd>プレイヤーが入力した数値を代入する変数を指定します。</dd>
+
+				<dt>桁数</dt>
+				<dd>入力を受け付ける数値の桁数（1～8）を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">アイテム選択の処理</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_01_img04.png" width="222" height="189" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アイテムの選択ウィンドウを表示します。プレイヤーが選択したアイテムのIDを変数に代入します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>変数</dt>
+				<dd>プレイヤーが選択したアイテムの番号（アイテムID）を代入する変数を指定します。</dd>
+				<dt>アイテムタイプ</dt>
+				<dd>リストに表示するアイテムの種類を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">文章のスクロール表示</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_01_img05.png" width="472" height="336" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>画面の下方から上方に向けて文章をスクロール表示します。決定ボタンを押すとスクロールを早送りできます。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>文章</dt>
+				<dd>表示する文章を入力します。</dd>
+
+				<dt>速度</dt>
+				<dd>スクロールの速度（1～8）を指定します。値が大きいほど高速になります。</dd>
+
+				<dt>早送りなし</dt>
+				<dd>決定ボタンで表示を早送りできないようにします。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

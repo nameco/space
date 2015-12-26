@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>マップ</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">マップ</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>マップ</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">マップ名表示の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_14_img01.png" height="141" width="262" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>異なるマップに移動したときにマップ名を表示するかどうかを制御します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>マップ名表示 </dt>
+				<dd>表示するには［ON］、表示しない場合は［OFF］を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">タイルセットの変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_14_img02.png" height="134" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップのタイルセットの設定を変更します。変更対象はイベントを配置したマップに限られます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>タイルセット </dt>
+				<dd>変更後のタイルセットを指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">戦闘背景の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_14_img03.png" height="134" width="272" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップの戦闘背景の設定を変更します。変更対象はイベントを配置したマップに限られます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>戦闘背景 </dt>
+				<dd>［...］をクリックすると開くウィンドウで、左側と右側画像をそれぞれ指定します。指定中の画像は右側のプレビュー領域で確認できます。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベント中に実行した場合、次回の戦闘から背景が変更されます。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">遠景の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_14_img04.png" height="282" width="242" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップの遠景の設定を変更します。変更対象はイベントを配置したマップに限られます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>画像</dt>
+				<dd>変更後の画像を指定します。</dd>
+				<dt>横方向にループする</dt>
+				<dd>有効にすると、画像を横方向に循環表示します。自動で表示をスクロールさせるには［スクロール］で速さ（-32～32／0で停止）を指定します。</dd>
+				<dt>縦方向にループする</dt>
+				<dd>有効にすると、画像を縦方向に循環表示します。自動で表示をスクロールさせるには［スクロール］で速さ（-32～32／0で停止）を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">指定位置の情報取得</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_14_img05.png" height="374" width="332" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップの特定の位置に関する値を参照し、変数に代入します。参照できるのはイベントを配置したマップに限られます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>変数</dt>
+				<dd>取得した値を代入する変数を指定します。</dd>
+				<dt>情報タイプ</dt>
+				<dd>取得する情報の種類を指定します。</dd>
+				<dt>場所</dt>
+				<dd>取得対象の位置を指定します。特定の位置を指定するには［直接指定］を選び、［…］をクリックすると開くウィンドウで位置を指定します。座標で指定するには［変数で指定］を選び、［X］［Y］に参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+

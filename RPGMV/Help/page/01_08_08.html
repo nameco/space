@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ステートの設定</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v03">ステートの設定</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_08.html">データベース</a></li>
+			<li>&gt;</li>
+			<li>ステートの設定</li>
+		</ul>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">データの役割</h2>
+			<p>
+				ステートとは“毒”や“混乱”など、キャラクターの体調や行動に影響を与える状態異常のことです。データには、ステートが付加された場合の具体的な影響を設定します。“毒に冒されてHPが減る”といったマイナスの影響だけでなく、“興奮して攻撃力がアップする”というプラスの効果を持つステートも用意できます。<br />
+				<br />
+				なお、1番の［戦闘不能］は、アクターや敵キャラのHPが0になったときに自動で付加される特殊なステートです。パーティメンバー全員にこのステートが付与されるとゲームオーバーになります。
+			</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">設定項目の内容</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_08_08_img01.png" width="769" height="631" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">
+				基本設定
+			</h3>
+			<h3 class="main__title--h3--sub">
+				名前
+			</h3>
+			<p>ステートの名前です。ステートはアイコンで示されますので、名前がゲーム中に使用されることはありません。</p>
+
+			<h3 class="main__title--h3--sub">
+				アイコン
+			</h3>
+			<p>ステートの付加中、アクター名の横や敵キャラの頭上に表示する画像です。ダブルクリックすると表示される［画像の選択］ウィンドウで画像を指定します。ステートの内容がわかる画像を指定するようにしましょう。</p>
+
+			<h3 class="main__title--h3--sub">
+				行動制約
+			</h3>
+			<p>ステートの付加中のキャラクターについて行動を制限します。以下の5項目をもとに制限内容を指定します。複数の制約が適用した場合、リストの下にあるものを優先します。</p>
+			<dl class="main__dl--sub">
+				<dt>なし </dt>
+				<dd>行動は制約されません。</dd>
+				<dt>敵を攻撃</dt>
+				<dd>必ず敵を攻撃します。</dd>
+				<dt>誰かを攻撃 </dt>
+				<dd>必ず敵か味方の一体を攻撃します。</dd>
+				<dt>味方を攻撃 </dt>
+				<dd>必ず味方を攻撃します。</dd>
+				<dt>行動できない </dt>
+				<dd>一切行動できなくなります。</dd>
+			</dl>
+
+			<h3 class="main__title--h3--sub">
+				優先度
+			</h3>
+			<p>ステートのアイコンの表示優先度（0～100）です。複数のステートが付与されている場合、最大の優先度を設定したステートのアイコンが表示されます。優先度が同じ場合は最も若いIDのステートが優先されます。</p>
+
+			<h3 class="main__title--h3--sub">
+				［SV］モーション
+			</h3>
+			<p>サイドビューモードでステートが有効な時に表示されるモーションを設定します。</p>
+
+			<h3 class="main__title--h3--sub">
+				［SV］重ね合わせ
+			</h3>
+			<p>サイドビューモードでステートが有効な時に表示される重ね合わせ画像を設定します。</p>
+
+			<h3 class="main__title--h3">
+				解除条件
+			</h3>
+			<p>ステートを解除する条件です。以下の項目をもとに条件を指定します。複数の条件を設定した場合、それぞれの基準を判定して解除します。</p>
+			<dl class="main__dl">
+				<dt>戦闘終了時に解除 </dt>
+				<dd>有効にすると戦闘終了時に解除します。</dd>
+				<dt>行動制約によって解除 </dt>
+				<dd>有効にすると、別の行動制約を持つステートが付加された場合に解除します。</dd>
+				<dt>自動解除のタイミング／継続ターン数 </dt>
+				<dd>ターンの経過後に解除します。［行動終了時］では行動者の行動が終わったとき、［ターン終了時］ではターンが終了し行動選択に戻る前に解除します。［継続ターン数］にはステートの付加から解除までのターン数の下限と上限（0～9999）を指定します。</dd>
+				<dt>ダメージで解除 </dt>
+				<dd>何らかのダメージを受けたとき、指定の確率（0～100％）で解除します。</dd>
+				<dt>歩数で解除 </dt>
+				<dd>指定したタイル数（0～9999）の距離を、マップ上を移動したタイミングで解除します。</dd>
+			</dl>
+
+			<h3 class="main__title--h3">
+				メッセージ
+			</h3>
+			<p>戦闘中、このステートが付加／解除されたときに表示するメッセージです。［味方がこの状態になったとき］［敵がこの状態になったとき］［この状態が継続しているとき］［この状態が解除されたとき］の4つの状況ごとに、対象者の名前に続けて表示する文言を指定します。</p>
+
+			<h3 class="main__title--h3">
+				特徴
+			</h3>
+			<p>ステートが付加されている対象者に付与する特徴です。詳細は［<a href="01_08_15.html">特徴の設定方法</a>］の項目を参照してください。</p>
+
+			<h3 class="main__title--h3">
+				メモ
+			</h3>
+			<p>ゲーム作成中のメモ書きに使えます。</p>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

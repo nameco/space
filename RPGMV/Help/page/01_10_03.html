@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>フロー制御</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">フロー制御</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>フロー制御<</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">条件分岐</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_03_img01.png" width="492" height="417" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>指定の条件に合致した場合のみ特別な処理を実行できるように、処理を分岐させるイベントコマンドを設定します。［条件を満たさないときの分岐を作成］を有効にすると、指定の条件を満たさない場合に分岐させることができます。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<p>条件は、以下の項目のなかから判定基準とともに指定します。</p>
+
+			<dl class="main__dl--sub">
+				<dt>スイッチ</dt>
+				<dd>指定したスイッチの値を基準とします。対象のスイッチと値（ON／OFF）を指定します。</dd>
+
+				<dt>変数</dt>
+				<dd>指定した変数の値を基準とします。条件判定に用いる変数、比較の基準値、比較の方法を指定します。比較の基準値に変数を用いる場合は［変数］を選び、参照する変数を指定します。</dd>
+
+				<dt>セルフスイッチ</dt>
+				<dd>指定のセルフスイッチの状態を基準とします。対象のスイッチと判定値（ON／OFF）を指定します。</dd>
+
+				<dt>タイマー</dt>
+				<dd>タイマーの残り時間を基準とします。基準の残り時間と判定基準（以上／以下）を指定します。</dd>
+
+				<dt>アクター</dt>
+				<dd>指定したアクター基準とします。対象のアクター、参照する内容（パーティにいる／名前／職業／スキル／武器／防具／ステート）、判定基準（具体的な項目）を指定します。</dd>
+
+				<dt>敵キャラ</dt>
+				<dd>戦闘中の指定した敵キャラを基準とします。対象の敵キャラと判定基準（出現している／ステート）を指定します。バトルイベントでのみ有効です。</dd>
+
+				<dt>キャラクター</dt>
+				<dd>プレイヤーまたはマップイベントの向きを基準とします。対象のキャラクターと向きを指定します。マップイベントでのみ有効です。</dd>
+
+				<dt>乗り物</dt>
+				<dd>プレイヤーが指定の乗り物（小型船／大型船／飛行船）に乗っているかどうかを基準とします。</dd>
+
+				<dt>お金</dt>
+				<dd>パーティの所持金を基準とします。金額と比較方法（以上／以下）を指定します。</dd>
+
+				<dt>アイテム</dt>
+				<dd>パーティが指定のアイテムを持っているかどうかを基準とします。</dd>
+
+				<dt>武器</dt>
+				<dd>パーティが指定の武器を持っていることを基準とします。［装備品を含む］を有効にすると、アクターが装備中のものも条件判定の対象とします。</dd>
+
+				<dt>防具</dt>
+				<dd>パーティが指定の防具を持っていることを基準とします。［装備品を含む］を有効すると、アクターが装備中のものも条件判定の対象とします。</dd>
+
+				<dt>ボタン</dt>
+				<dd>指定のボタンが押されていることを基準とします。</dd>
+
+				<dt>スクリプト</dt>
+				<dd>上級者向け：スクリプトを評価した結果を基準とします。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">ループ</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>繰り返し処理を行なう［ループ］と［以上繰り返し］という制御用のイベントコマンドを追加します。これらの行の間に設定したイベントが繰り返し実行できるようになります。ループ処理の中でさらにループ処理を行なう“多重ループ”も可能です。</p>
+
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>［ループ］～［以上繰り返し］内のイベントベントコマンドは無限に繰り返されます。繰り返し処理を終えるには［ループの中断］などのイベントコマンドを使います。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">ループの中断</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>［ループ］のイベントコマンドで繰り返している処理を中断します。実行すると、［以上繰り返し］の次の行に設定したイベントコマンドに処理が移ります。設定項目はありません。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">イベント処理の中断</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>実行内容の処理を終了します。これ以降のイベントコマンドは処理されません。設定項目はありません。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">コモンイベント</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_03_img02.png" width="222" height="134" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>コモンイベントを呼び出します。呼び出したコモンイベントの処理が終了すると、次のイベントコマンドの処理に移ります。</p>
+
+			<h3 class="main__title--h3--sub">設定内容</h3>
+			<dl class="main__dl--sub">
+				<dt>コモンイベント</dt>
+				<dd>呼び出すコモンイベントを指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">ラベル</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_03_img03.png" width="222" height="134" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>［ラベルジャンプ］のイベントコマンドによる処理の移動先（目印）を作成します。</p>
+
+			<h3 class="main__title--h3--sub">設定内容</h3>
+			<dl class="main__dl--sub">
+				<dt>ラベル名</dt>
+				<dd>ラベルの名前を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p07">
+			<h2 class="main__title--h2">ラベルジャンプ</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_03_img04.png" width="222" height="134" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>処理対象の行を指定のラベルの位置に移動します。移動したラベルの次の行のイベントコマンドが処理されます。</p>
+
+			<h3 class="main__title--h3--sub">設定内容</h3>
+			<dl class="main__dl--sub">
+				<dt>ラベル名</dt>
+				<dd>移動先のラベル名を指定します。指定できるラベルは、同一のイベントページの実行内容に設定したものに限られます。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p08">
+			<h2 class="main__title--h2">注釈</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_03_img05.png" width="432" height="225" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>実行内容のリストに任意の文字をメモとして登録します。ゲームのプレイには一切影響しません。</p>
+
+			<h3 class="main__title--h3--sub">設定内容</h3>
+			<dl class="main__dl--sub">
+				<dt>注釈</dt>
+				<dd>注釈として表示する文字を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

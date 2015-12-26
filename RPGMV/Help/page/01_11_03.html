@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>プラグイン仕様</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v06">プラグイン仕様</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>資料集</li>
+			<li>&gt;</li>
+			<li>プラグイン仕様</li>
+		</ul>
+		<p>RPGツクールMVでは、JavaScriptを用いて独自のプラグインを制作することができます。<br />
+		以下の内容は、プラグイン制作に関する開発者向けの情報です。</p>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">基本</h2>
+			<ul class="main__ul">
+				<li>プラグインのjsファイルをjs/pluginsフォルダに配置します。</li>
+				<li>エディターはjs/plugins.jsに対して書き込み、使用するプラグインの名前とパラメータを保持します。</li>
+				<li>プラグインのスクリプトは、変数の有効範囲を限定するため即時関数で全体を囲みます。</li>
+				<li>文字コードはUTF-8を使用します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">メソッドの再定義</h2>
+			<ul class="main__ul">
+				<li>動作を変更したいメソッドを、必要に応じてローカル変数に保存した後、再定義します。</li>
+				<li>プラグインの競合を最小限にするため、なるべくオリジナルの動作に追加する形が望ましいです。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">パラメータ</h2>
+			<ul class="main__ul">
+				<li>
+					エディター側に表示されるプラグインの説明とパラメータは、“/*:”で始まるコメント内で指定します。
+					<table class="main__table--type01">
+						<tr>
+							<th>@plugindesc</th>
+							<td>プラグインの説明。</td>
+						</tr>
+						<tr>
+							<th>@author</th>
+							<td>プラグインの作者。</td>
+						</tr>
+						<tr>
+							<th>@param</th>
+							<td>パラメータの名前。</td>
+						</tr>
+						<tr>
+							<th>@desc</th>
+							<td>パラメータの説明。</td>
+						</tr>
+						<tr>
+							<th>@default</th>
+							<td>パラメータのデフォルト値。</td>
+						</tr>
+						<tr>
+							<th>@help</th>
+							<td>プラグインの詳細な説明。</td>
+						</tr>
+					</table>
+				</li>
+				<li>エディターから指定されたパラメータを取得するにはPluginManager.parameters()を使用します。</li>
+				<li>すべてのパラメータは文字列として扱われますので、必要に応じて変換を行います。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">メタデータ</h2>
+			<p>データベースの各項目にある“メモ”の欄は、各プラグインで用いる独自のデータを定義するために使うことができます。</p>
+<pre class="main__pre--code">
+&lt;name:data&gt;
+</pre>
+			<p>
+				このように一定の書式で記述したデータは、標準のスクリプトによって自動的に“meta”という変数の中に展開されます。<br />
+				上記の場合、以下の条件を満たします（objectはデータ項目とします）。
+			</p>
+<pre class="main__pre--code">
+object.meta.name === 'data'
+</pre>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">プラグインコマンド</h2>
+			<p>プラグインコマンドは、プラグイン独自のイベント処理を定義しやすくするための仕組みです。これを実装する場合は、Game_InterpreterクラスのpluginCommandメソッドを次のように再定義します。</p>
+<div class="main__pre--code--wrap">
+<pre class="line-pre"><div id="file-gistfile1-js-LC1" class="line">    <span class="pl-s">var</span> _Game_Interpreter_pluginCommand <span class="pl-k">=</span>
+</div><div id="file-gistfile1-js-LC2" class="line">            Game_Interpreter.<span class="pl-sc">prototype</span>.pluginCommand;
+</div><div id="file-gistfile1-js-LC3" class="line">    <span class="pl-s3">Game_Interpreter</span>.<span class="pl-sc">prototype</span>.<span class="pl-en">pluginCommand</span> <span class="pl-k">=</span> <span class="pl-st">function</span>(<span class="pl-vpf">command</span>, <span class="pl-vpf">args</span>) {
+</div><div id="file-gistfile1-js-LC4" class="line">        _Game_Interpreter_pluginCommand.<span class="pl-s3">call</span>(<span class="pl-v">this</span>, command, args);
+</div><div id="file-gistfile1-js-LC5" class="line">        <span class="pl-c">// 追加する処理内容をここに記述</span>
+</div><div id="file-gistfile1-js-LC6" class="line">    };
+</div></pre>
+</div>
+			<p>
+				メソッドの引数commandとargsに、ユーザーが呼び出したプラグインコマンドの内容が入ります。commandは文字列、argsは文字列の配列になります。たとえば、ユーザーが“MyPlugin clear”と入力したかどうかの判定を行なう場合は、次のようになります。
+			</p>
+<div class="main__pre--code--wrap">
+<pre class="line-pre"><div id="file-gistfile1-js-LC1" class="line">        <span class="pl-k">if</span> (command <span class="pl-k">===</span> <span class="pl-s1"><span class="pl-pds">'</span>MyPlugin<span class="pl-pds">'</span></span> <span class="pl-k">&amp;&amp;</span> args[<span class="pl-c1">0</span>] <span class="pl-k">===</span> <span class="pl-s1"><span class="pl-pds">'</span>clear<span class="pl-pds">'</span></span>) {
+</div><div id="file-gistfile1-js-LC2" class="line">        }
+</div></pre>
+</div>
+
+
+<p>プラグインのパラメータと同様、すべて文字列として渡されますので、必要に応じて変換を行ってください。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">多言語対応</h2>
+			<p>コメントブロック頭の“/*:”に続けて言語コードを指定することができます。日本語の場合は“/*:ja”となります。言語コードを指定されたコメントブロックは、その言語のエディター環境でのみ使用され、対応する言語がない場合には無印の部分（通常は英語）が使用されます。</p>
+			<table class="main__table--type01">
+				<tr>
+					<th>コード</th>
+					<th>言語</th>
+				</tr>
+				<tr>
+					<td>ja</td>
+					<td>日本語</td>
+				</tr>
+				<tr>
+					<td>fr</td>
+					<td>フランス語</td>
+				</tr>
+				<tr>
+					<td>de</td>
+					<td>ドイツ語</td>
+				</tr>
+				<tr>
+					<td>es</td>
+					<td>スペイン語</td>
+				</tr>
+				<tr>
+					<td>it</td>
+					<td>イタリア語</td>
+				</tr>
+				<tr>
+					<td>pt</td>
+					<td>ポルトガル語</td>
+				</tr>
+				<tr>
+					<td>ru</td>
+					<td>ロシア語</td>
+				</tr>
+				<tr>
+					<td>zh</td>
+					<td>中国語</td>
+				</tr>
+				<tr>
+					<td>ko</td>
+					<td>韓国語</td>
+				</tr>
+			</table>
+		</div><!-- /main__section -->
+
+
+
+
+
+
+
+
+
+	</div><!-- /main -->
+</body>
+</html>
+
+

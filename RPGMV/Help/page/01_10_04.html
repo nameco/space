@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>パーティ</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">パーティ</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>パーティ</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">所持金の増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_04_img01.png" width="352" height="245" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティの所持金を増減します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>増減させる額を指定します。一定額を増減する場合は［定数］を選び、金額を入力します。変数の値で額を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">アイテムの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_04_img02.png" width="352" height="300" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティのアイテムの所持数を増減します。増減の結果、所持数が0～99個の範囲を超える場合は99個（最大所持数）、または0個（所持なし）に調整されます。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アイテム</dt>
+				<dd>増減対象のアイテムを指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>増減させる数量を指定します。一定数を増減する場合は［定数］を選び、数量を入力します。変数の値で数量を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">武器の増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_04_img03.png" width="352" height="328" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティの武器の所持数を増減します。増減の結果、所持数が0～99個の範囲を超える場合は99個（最大所持数）、または0個（所持なし）に調整されます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>武器</dt>
+				<dd>増減対象の武器を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>増減させる数量を指定します。一定数を増減する場合は［定数］を選び、数量を入力します。変数の値で数量を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>装備品を含む</dt>
+				<dd>有効にすると、アクターが装備している武器も減らす対象にします。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">防具の増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_04_img04.png" width="352" height="328" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティの武器の所持数を増減します。増減の結果、所持数が0～99個の範囲を超える場合は99個（最大所持数）、または0個（所持なし）に調整されます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>防具</dt>
+				<dd>増減対象の防具を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>増減させる数量を指定します。一定数を増減する場合は［定数］を選び、数量を入力します。変数の値で数量を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>装備品を含む</dt>
+				<dd>有効にすると、アクターが装備している防具も減らす対象にします。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">メンバーの入れ替え</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_04_img05.png" width="262" height="224" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティ内のアクターの構成を変更します。入れ替えの結果、パーティ内のアクターを0人にすることもできます。この場合、マップ上にプレイヤーは表示されなくなります。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>入れ替え対象のアクターを指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（加える／外す）を指定します。</dd>
+				<dt>初期化</dt>
+				<dd>有効にすると、アクターを加えるときの設定値が［データベース］での設定に基づいたものになります。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+
+
+	</div><!-- /main -->
+
+</body>
+</html>

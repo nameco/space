@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>出力フォーマット</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v06">出力フォーマット</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>資料集</li>
+			<li>&gt;</li>
+			<li>出力フォーマット</li>
+		</ul>
+
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">デプロイメント</h2>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_04_img01.png" height="190" width="502" alt="" />
+			</div>
+			<p>各プラットフォーム用の配布パッケージを出力します。Windows、Mac OS X、Android、iOSへの出力が可能です。</p>
+			<dl class="main__dl">
+				<dt>Windowsの場合</dt>
+				<dd>
+					出力されたゲームフォルダを配布します。<br />
+					ゲームフォルダをパッケージングしてexeファイルのみ配布する場合は、［<a href="01_11_07.html">Enigma Virtual Boxの使い方</a>］の項目をご覧ください。
+				</dd>
+				<dt>Mac OS Xの場合</dt>
+				<dd>
+					出力されたゲームフォルダ、もしくはゲームフォルダ内のファイルGame.appを配布します。<br />
+					※Windows環境ではGame.appはフォルダとして表示されますが、Mac OS X環境ではアプリケーションとして起動することができます。
+				</dd>
+				<dt>Android／iOSの場合</dt>
+				<dd>［<a href="01_11_05.html">Androidアプリへの変換</a>］［<a href="01_11_06.html">iOSアプリへの変換</a>］の項目をご覧ください。</dd>
+				<dt>Web上で公開する場合</dt>
+				<dd>プロジェクトフォルダをそのままWebサーバーにアップロードするとブラウザ上でプレイすることができます。<br />
+					※プロジェクトフォルダは新規プロジェクトを作成・保存したときに［場所］で設定した箇所にあります。<br />
+					※Game.rpgprojectとsaveフォルダはゲームの実行に必要ありませんが、そのままアップロードしても特に支障はありません。<br />
+					<br />
+					<dl class="main__dl--sub">
+						<dt id="p01_01">ゲームプレイの動作環境</dt>
+						<dd>
+							<table class="main__table--type01">
+								<tr>
+								<th>動作環境</th>
+								<td>HTML5 CanvasとWeb Audio APIに対応したもの<br />iOS8以上<br />Android4.4以上</td>
+								</tr>
+								<tr>
+								<th>推奨環境</th>
+								<td>Windows, Android: Google Chrome <br />Mac OS X, iOS: Safari</td>
+								</tr>
+								<tr>
+									<td colspan="2">
+										※スマートフォンのブラウザでプレイする場合は、Wi-Fi環境でプレイしてください。<br />
+										※WebGL対応ブラウザでのプレイを推奨します。
+									</td>
+								</tr>
+							</table>
+						</dd>
+					</dl>
+				</dd>
+		</dl>
+		</div><!-- /main__section -->
+
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+

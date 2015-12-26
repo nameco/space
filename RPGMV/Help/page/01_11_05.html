@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Androidアプリへの変換＜apkファイルの作成＞</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v06">Androidアプリへの変換<br />＜apkファイルの作成＞</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>資料集</li>
+			<li>&gt;</li>
+			<li>Androidアプリへの変換＜apkファイルの作成＞</li>
+		</ul>
+
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">1 概要</h2>
+			<p>
+				RPGツクールMVで制作されたゲーム（以下ツクールゲーム）は、本バージョンよりWebGL・2DCanvasやWebAudio、JavaScriptといったいわゆるHTML5の技術をサポートするブラウザで動作します。昨今のAndroid向けブラウザではHTML5のサポートが進み、そうしたブラウザでもツクールゲームのプレイが楽しめるようになりました。<br />
+				<br />
+				ここでは、ブラウザでのプレイではなく、Androidアプリとして楽しむ方法を解説しています。Android端末でアプリとしてHTML5ゲームを動作させる事は、いわばHTML5対応ブラウザをAndroidアプリとして包んで動作させるようなものです。このような、Webアプリをネイティブアプリのように動作させる開発方法は“ハイブリットアプリ”などと呼ばれ、クロスプラットフォームで動作することから人気があります。<br />
+				<br />
+				アプリとして包むブラウザは、Webの表示や音声再生を担う“ブラウザエンジン”で、Android内蔵のものもあります（WebViewと呼びます）。しかし、Android内蔵のブラウザエンジンはHTML5への対応度が少し遅れているようです。そのため、ここではよりHTML5対応度の高いChromeのブラウザエンジンを採用した“Crosswalk Project”という技術を用いた方法を解説します。<br />
+				Crosswalk ProjectのWebサイトでもこのページと同等の解説がありますので参考にしてください。（［<a href="https://crosswalk-project.org/documentation/android.html" target="_blank">Crosswalk Project on Android</a>］ ※英文）。
+			</p>
+			<h3 class="main__title--h3--sub">対象OS</h3>
+			<p>ここでは作業環境をWindows 8.1、およびOS X 10.10を対象に進めていきます。また、作業するPCの事を以下“ホストPC”と呼びます。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">2 パッケージングの環境を整える</h2>
+			<p>Androidにツクールゲームをインストールするには、apkファイルを作成する必要があります。apkファイルとは、Androidアプリのインストーラーの事で、拡張子はapkです。実際にはZIP形式で圧縮されており、アプリの動作に必要な様々なファイルが入っています。ここでは、apkファイルを作成する事を“パッケージング”と呼びます。<br />
+			尚、開発ツール等必要なものを入手するためにインターネット接続が必要です。</p>
+
+			<h3 class="main__title--h3">2-1 Pythonのインストールと設定</h3>
+			<p>Crosswalk Projectでは簡単にパッケージングを行うためにパッケージングスクリプトが用意されています。これはPythonという言語で作られているので、Pythonを実行できる環境を作ります。ここではWindowsにPythonをインストールする方法を解説しますが、<b>OS XではOSに始めから用意されているため必要ありません。2-2へ進んでください。</b></p>
+
+			<h3 class="main__title--h3--sub">2-1-1 Pythonのダウンロード・インストール</h3>
+			<p><a href="https://www.python.org/downloads/" target="_blank">https://www.python.org/downloads/</a>より、インストーラーをダウンロードし起動します。インストール中の項目は、必要なければ特に変える必要はありませんが、どこにインストールされるのかは見ておきましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-1.png" height="673" width="1024" alt="" />
+			</div>
+			<p>C:\Python34にインストールされました。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-6.png" height="600" width="800" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-1-2 パスの設定・確認</h3>
+			<p>Pythonコマンドを使いやすいように先ほどインストールしたC:\Python34にパスを通します。<br />
+			PCを右クリックし、［プロパティ］から［システムの詳細設定］を開きます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-8.png" height="609" width="873" alt="" />
+			</div>
+			<p>［システムのプロパティ］より［環境変数］をクリックします。［システム環境変数］の［Path］を選択し、編集ボタンをクリックします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-9.png" height="609" width="873" alt="" />
+			</div>
+			<p>変数値を編集します。元から入っている文字列の最後に;C:\Python34\と追加するとパスが通ります（セミコロンは区切り文字）。</p>
+<pre class="main__pre--code">
+;C:\Python34\
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-10.png" height="609" width="873" alt="" />
+			</div>
+			<p>コマンドプロンプトから確認してみます。Windows 8.1をお使いの場合、Cドライブなどをエクスプローラーで開き、ファイルメニューから［コマンドプロンプトを開く］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-11.png" height="626" width="800" alt="" />
+			</div>
+			<p>コマンドpython --versionと入力しEnterキーを押します。Pythonのバージョンが表示されればOKです。</p>
+<pre class="main__pre--code">
+&gt; python --version
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-12.png" height="493" width="997" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-2 Oracle JDKのインストールと設定</h3>
+			<p>Android SDK toolsやAntといったツールの実行にJDK（Java Development Kit）が必要です。現在はOracleから提供されています。OS Xでも10.6以降、JDKは含まれなくなったため、インストールしておきましょう。</p>
+
+			<h3 class="main__title--h3--sub">2-2-1 JDKのダウンロード・インストール</h3>
+			<p><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>からダウンロードします。2015年8月時点での最新バージョンはJava SE 8u51です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-13.png" height="673" width="1024" alt="" />
+			</div>
+			<p>お使いのシステムに合っているものをダウンロードします。Windows版は32bit版（Windows x86）と64bit版（Windows x64）があるので注意してください。<br />
+			上のラジオボタンでAccept License Agreementを選択しておきます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-14.png" height="673" width="1024" alt="" />
+			</div>
+			<p>ダウンロードしたインストーラーを実行してJDKをインストールします。オプションは特に変える必要はありません。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-15.png" height="393" width="513" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-2-2 環境変数・パスの設定と確認</h3>
+			<p>環境変数JAVA_HOMEを設定します。2-1-2のPythonのパス設定と同様に［システムのプロパティ］を開き、［システム環境変数］の［新規ボタン］をクリックします。<br />
+			変数名にはJAVA_HOMEを、変数値にはJDKのインストール先を入力します。ここではC:\Program Files\Java\jdk1.8.0_51でした。</p>
+<pre class="main__pre--code">
+JAVA_HOME
+C:\Program Files\Java\jdk1.8.0_51
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-17.png" height="563" width="635" alt="" />
+			</div>
+			<p>続いてパスを通します。［システム環境変数］の［Path］を選択し、編集ボタンをクリックします。既に入力されている変数値につづいて;%JAVA_HOME%\bin\と入力します。</p>
+<pre class="main__pre--code">
+;%JAVA_HOME%\bin\
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-18.png" height="563" width="659" alt="" />
+			</div>
+			<p>Pythonの時と同様にコマンドプロンプトでバージョンを確認してみましょう。<br />
+			java -versionと入力しEnterキーを押します。バージョンが表示されればOKです。</p>
+<pre class="main__pre--code">
+&gt; java -version
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-2-16.png" height="493" width="997" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-3 Apache Antのインストールと設定</h3>
+			<p>AntはJavaで動作するビルドツールと呼ばれるものです。パッケージングスクリプトで内部的に使用されています。Windows、OS X共にインストールが必要です。</p>
+
+			<h3 class="main__title--h3--sub">2-3-1 Antのダウンロード・インストール</h3>
+			<p><a href="http://ant.apache.org/bindownload.cgi" target="_blank">http://ant.apache.org/bindownload.cgi</a>よりAntのバイナリをダウンロードします。<br />
+			［Current Release of Ant］の［.zip archive:］をダウンロードします。2015年8月時点での最新バージョンは1.9.6です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-3-1.png" height="673" width="1024" alt="" />
+			</div>
+			<p>ダウンロードしたファイルはZIP圧縮されているので、任意の場所に展開します。ここではCドライブ直下に展開しました。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-3-2.png" height="626" width="800" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-3-2 環境変数・パスの設定と確認</h3>
+			<p>Antの環境変数、パスを設定します。2-1-2のPythonへパスを通す作業と同様に環境変数のウィンドウを開きます。<br />
+			まずはANT_HOMEの環境変数を設定します。システム環境変数の新規ボタンをクリックし、変数名に［ANT_HOME］を、変数値には先ほど展開したAntのパスを入力します。</p>
+<pre class="main__pre--code">
+ANT_HOME
+C:\apache-ant-1.9.6
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-3-3.png" height="563" width="642" alt="" />
+			</div>
+			<p>続いてパスを通します。［システム環境変数］の［Path］を選択し、編集ボタンをクリックします。既に入っている変数値に続いて;%ANT_HOME%\bin\と入力します。</p>
+<pre class="main__pre--code">
+;%ANT_HOME%\bin\
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-3-4.png" height="563" width="645" alt="" />
+			</div>
+			<p>パスが通っているか、これまでと同様にコマンドプロンプトのバージョン表示で確認します。ant -versionと入力しEnterキーを押します。</p>
+<pre class="main__pre--code">
+&gt; ant -version
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-3-5.png" height="493" width="997" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-4 Android SDKのインストールと設定</h3>
+			<p>SDKとは、Software Development Kitの略で、その名の通りソフトウェアを開発するために必要なキットが含まれます。パッケージングに必要なファイルや、テスト等に便利なツールが揃っています。</p>
+
+			<h3 class="main__title--h3--sub">2-4-1 Android SDKのダウンロード・インストール</h3>
+			<p><a href="http://developer.android.com/sdk/installing/index.html" target="_blank">http://developer.android.com/sdk/installing/index.html</a>よりAndroid SDKをダウンロードします。SDKは［ANDROID STUDIO］と呼ばれるAndroidアプリを開発するソフトウェアにも含まれていますが、ここでは［STAND-ALONE SDK TOOLS］を使用します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-1.png" height="673" width="1024" alt="" />
+			</div>
+			<p>［STAND-ALONE SDK TOOLS］を選択し、次に表示されるページで［download the SDK now］をクリックします。
+			2015年8月時点でのSDKの最新バージョンはr24.3.3です。ここではインストーラー（exeファイル）をダウンロードします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-2.png" height="673" width="1024" alt="" />
+			</div>
+			<p>ダウンロードしたインストーラーを起動してインストールを進めます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-3.png" height="400" width="513" alt="" />
+			</div>
+			<p>途中でSDKのインストール先を入力する画面になります。ここでは分かりやすいよう、Cドライブの直下にインストールします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-4.png" height="400" width="513" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-4-2 Android SDK Managerで必要なものを追加ダウンロードする</h3>
+			<p>
+				インストール直後のAndroid SDKは必要最小限のものしか入っていません。ここでは追加で必要なplatform-tools等をAndroid SDK Managerでダウンロードします。Android SDK Managerはスタートメニューに登録されています。<br />
+				<br />
+				Android SDK Managerでは、実機とホストPCをUSBで接続するドライバなどもダウンロード可能です。どれを追加ダウンロードしたらよいか分からなければ、Android SDK Managerの起動直後に選択されているものだけでOKですが、［Android SDK platform-tools］と［Android SDK Build-tools］、API（ここでの最新は［Android5.1.1（API 22］)）だけは選択しておきましょう。<br />
+				また、USB接続で実機インストール可能になる［Extras］フォルダの［Google USB Driver］も追加しておくとよいでしょう（後述）。<br />
+			</p>
+			<ul class="main__ul">
+				<li>Android SDK platform-tools</li>
+				<li>Android SDK Build-tools</li>
+				<li>Android5.1.1（API 22］)</li>
+				<li>Google USB Driver</li>
+			</ul>
+			<p>※上記ツールは初期状態で選択されている場合があります。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-5.png" height="500" width="700" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-4-3 パスの設定・確認</h3>
+			<p>システム環境変数Pathを編集し、Android SDKの場所、各ツールへ3箇所のパスを追加します。</p>
+
+<pre class="main__pre--code">
+;C:\android-sdk\
+;C:\android-sdk\tools\
+;C:\android-sdk\platform-tools\
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-6.png" height="563" width="658" alt="" />
+			</div>
+			<p>パスを確認します。ここではadbコマンドを見てみます。コマンドプロンプトにadb versionと入力しEnterキーを押します。</p>
+<pre class="main__pre--code">
+&gt; adb version
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-4-7.png" height="493" width="996" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-5 Crosswalk ProjectのAndroidアプリテンプレートをダウンロード</h3>
+			<p>Crosswalk Projectはインストールを必要としません。ダウンロードしたZIPファイルを好きな場所に展開します。ダウンロードしたファイルの中にはブラウザエンジンや、パッケージングスクリプトが含まれます。<br />
+			<a href="https://download.01.org/crosswalk/releases/crosswalk/android/stable/" target="_blank">https://download.01.org/crosswalk/releases/crosswalk/android/stable/</a>より、Androidアプリテンプレートのstable（安定）版をダウンロードします。バージョンが14までありますが、10.39.235.16が安定しています。<br />
+			フォルダをクリックし［crosswalk-10.39.235.16.zip ］をダウンロードします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-5-1.png" height="673" width="1024" alt="" />
+			</div>
+			<p>ここではCドライブの直下に展開しました。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/2-5-2.png" height="626" width="800" alt="" />
+			</div>
+			<p>これで、パッケージング環境の完成です。</p>
+
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">3 ツクールでゲームのデプロイメント</h2>
+			<p>ツクールから、パッケージングに必要なゲームデータや素材、ゲームエンジンを書き出します。ファイルメニューより［デプロイメント...］を選択しデプロイメントダイアログを表示します。ここで［Android / iOS］を選択して書き出せば、Androidパッケージングに必要なファイルが選択したフォルダにすべて揃います。<br />
+			ここではデスクトップにデプロイメントしました。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/3-1-1.png" height="625" width="800" alt="" />
+			</div>
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">4 パッケージング</h2>
+			<p>パッケージングとは、Android端末にアプリケーションをインストール可能なapkファイルを作成することです。</p>
+
+			<h3 class="main__title--h3">4-1 manifest.jsonの作成</h3>
+			<p>ゲームの動作を決めるmanifest.jsonをお好みのテキストエディタで作成します。<br />
+			以下にmanifest.jsonの例を挙げます。</p>
+
+<b>manifest.json</b>
+<pre class="main__pre--code">
+{
+  "name": "Sample",
+  "xwalk_version": "0.0.1",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "icon/icon48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icon/icon72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icon/icon96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icon/icon144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icon/icon192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icon/icon512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "4.0"
+    }
+  ]
+}
+</pre>
+			<p>名前やバージョン番号以外はそのまま使っても問題ありません。<br />
+			manifest.jsonをデプロイしたフォルダの/www内に保存してください。<br />
+			ファイル内のプロパティ名と値の意味は下記のとおりです。</p>
+			<table class="main__table--type01">
+				<tr>
+					<th>プロパティ名</th>
+					<th>値</th>
+				</tr>
+				<tr>
+					<td>name</td>
+					<td>ゲーム名</td>
+				</tr>
+				<tr>
+					<td>xwalk_version</td>
+					<td>バージョン番号。アップデートしたら数字を増やします。必ずX.X.Xの書式を守ってください。</td>
+				</tr>
+				<tr>
+					<td>start_url</td>
+					<td>ゲームのURL。index.htmlとしておきます。</td>
+				</tr>
+				<tr>
+					<td>display</td>
+					<td>フルスクリーンの指定。fullscreenとしておきます。</td>
+				</tr>
+				<tr>
+					<td>orientation</td>
+					<td>画面の向き。landscapeを選んでおきます。</td>
+				</tr>
+				<tr>
+					<td>icons</td>
+					<td>アイコン</td>
+				</tr>
+			</table>
+			<p>参考URL: Manifest for a web application: <a href="http://w3c.github.io/manifest" target="_blank">http://w3c.github.io/manifest/</a></p>
+
+			<h3 class="main__title--h3">4-2 パッケージングスクリプトの実行</h3>
+			<p>2-5でダウンロードしたAndroidアプリテンプレートの中にパッケージングを行うスクリプト“make_apk.py”が用意されています。コマンドプロンプトで使用します。<br />
+			コマンドプロンプトを開いてデプロイしたフォルダ/ゲーム名/www内に（以下ゲームフォルダ）に移動します。エクスプローラーでゲームフォルダを開き、ファイルメニューからコマンドプロンプトを開くと便利です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/4-1-1.png" height="493" width="987" alt="" />
+			</div>
+			<p>ここまで準備してきた環境でのコマンド実行の例を挙げます。</p>
+<pre class="main__pre--code">
+python C:\crosswalk-10.39.235.16\make_apk.py --package=com.example.sample --manifest=manifest.json
+</pre>
+			<p>
+				パッケージングスクリプトはPythonで書かれています。pythonコマンドに続いてスクリプトを指定します。
+			</p>
+			<dl class="main__dl--sub">
+				<dt>--package</dt>
+				<dd>パッケージ名を指定します。ご自分で所有するドメインをお持ちの方はそれを使用してください。ドメイン名は記入例のようにトップレベルドメイン（例ではcom）から逆に使用し、“.（ドット）”でつなぎます。最後に固有のゲーム名（例ではsample）をつなげます。ここで使用したパッケージ名は、このゲームのパッケージングでずっと使用していくので注意してください。<br />
+				<b>※example.comは仮で使用できるドメインです。後述するPlay Storeへの公開はできません。</b><br />
+				<br />
+				記入例：<br />お持ちのドメインが［example.com］で固有のゲーム名が［sample］の場合<br />
+				com.example.sample
+				</dd>
+				<dt>--manifest</dt>
+				<dd>このパッケージのマニフェストファイルを指定します。マニフェストファイルではゲームのバージョンやアイコン、動作に関わる振る舞いなどを指定可能です。</dd>
+			</dl>
+			<p>
+				コマンドを実行し、無事パッケージングが終わると［BUILD SUCCESSFUL］とメッセージが表示されます。
+			</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/4-1-2.png" height="727" width="997" alt="" />
+			</div>
+			<p>ゲームフォルダにSample_0.0.1_arm.apkとSample_0.0.1_x86.apkの二つが作成されていることが確認できます。［arm］と付いているものが組み込み向けCPUとして広く採用されているARMアーキテクチャCPU向けのパッケージです。現在市販されている多くのAndroidスマートフォン、タブレットに採用されています。［x86］は、主にパソコンで使用されるx86アーキテクチャのCPU向けパッケージです。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/4-1-3.png" height="603" width="800" alt="" />
+			</div>
+			<p>もう一度パッケージングスクリプトを実行すると、この二つのapkファイルも含めてパッケージングされてしまうため、apkファイルはフォルダの外に出しておきましょう。</p>
+
+
+			<h3 class="main__title--h3">4-3 実機にインストール</h3>
+
+			<h3 class="main__title--h3--sub">4-3-1 実機Androidの準備</h3>
+			<p>USB接続経由でパッケージをインストール可能にするためには、［開発者向けオプション］を有効にする必要があります。<br />
+			［開発者向けオプション］を有効にするには、［設定］→［バージョン情報］→［ソフトウェア情報］→［その他］と進み、［ビルド番号］の部分を7回タップします。<br />
+			<b>※お使いの端末により、［ビルド番号］の場所は異なる場合があります。<br />
+			　例）［設定］→［端末情報］</b></p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-4.png" width="320" height="569" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-3-2 USB接続でインストール</h3>
+			<p>
+				パッケージをUSB接続経由でインストールします。もし、お使いのAndroid端末のUSBドライバがホストPCに入っていない場合は2-4-3で紹介したAndroid SDK Managerで取得しておきましょう。<br />
+				ホストPCとAndroid端末をUSBで接続します。USBケーブルは充電用ではなく、通信用のものを使用してください。<br />
+				接続が成功すると、USBデバックを許可するかを尋ねるダイアログがAndroid端末に表示されますので許可してください。<br />
+				<br />
+				コマンドプロンプトより、adb devicesと入力しEnterキーを押します。うまく接続されている場合は端末名が表示されます。
+			</p>
+<pre class="main__pre--code">
+&gt; adb devices
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/4-2-1.png" width="997" height="493" alt="" />
+			</div>
+			<p>パッケージをインストールするにはadbコマンドのinstallオプションを使います。adb install -r Sample_0.0.1_arm.apkと入力し、Enterキーを押します。-rオプションは再インストール用のオプションですが、同じパッケージ名であればゲームをアップデートすることができます。<br />
+			［Success］と表示されればインストールは成功です。実機のアプリ一覧にあるゲームを起動できます。</p>
+<pre class="main__pre--code">
+&gt; adb install -r Sample_0.0.1_arm.apk
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-5.png" width="1920" height="1080" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-3-3 インターネット経由でインストール</h3>
+			<p>
+				Googleドライブ等のクラウドを利用し、インターネット経由でインストールするには、apkファイルを任意のクラウドへアップロードし、Andoroid端末でダウンロードしインストールします。<br />
+				その際は、Android端末側で不明な提供元アプリのインストールを許可する設定が必要です。［設定］→［セキュリティ］→［不明な提供元］をオンにします。
+			</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-6.png" width="320" height="569" alt="" />
+			</div>
+
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">5 Google Playへの公開</h2>
+			<p>Google Playでゲームを公開するには<a href="https://play.google.com/apps/publish/signup/" target="_blank">Google Playデベロッパー</a>への登録が必要です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-1.png" width="1024" height="673" alt="" />
+			</div>
+			<p><b>Google Play向けのアプリ開発について、すべてをここで解説することはできません。市販の参考書籍などを参照されることをお勧めします。</b><br />
+			ここでは特に重要な事柄を記述しています。</p>
+
+			<h3 class="main__title--h3">5-1 アプリに署名を行う</h3>
+			<p>署名とは、［提供元］、つまりご自分が開発したゲームだという証明をパッケージに設定することです。自分で書いた絵にサインを書き加える行為に似ています。署名が行われていないアプリはGoogle Playへの公開はできません。<br />
+			署名の方法はいくつかありますが、ここではmake_apk.pyスクリプトを使用した方法を紹介します。</p>
+
+			<h3 class="mian__title--h3--sub">5-1-1 キーストアファイルの作成</h3>
+			<p>キーストアファイルとは、自分の情報を暗号化し、第三者が勝手に使用できないようにしたものです。これにより、自分で開発したゲームだということが保証されます。<br />
+			［ストア］には複数のキーを保管できますが、Androidパッケージ用としてはひとつでOKです。<br />
+			尚、ここで作成したキーストアファイルは他のアプリの署名にも使用できます。<br />
+			キーストアファイルを作成するには、環境づくりで導入したJDKに含まれているkeytoolコマンドを使用します。以下にコマンドの例を挙げます。</p>
+<pre class="main__pre--code">
+keytool -genkey -v -keystore sample.keystore -storepass password -alias release -keypass password -keyalg RSA -validity 10000
+</pre>
+
+			<dl class="main__dl--sub">
+				<dt>-genkey -v</dt>
+				<dd>新しいキーファイルを作るよう指定します。</dd>
+				<dt>-keystore</dt>
+				<dd>キーストアファイルのファイル名を指定します。</dd>
+				<dt>-storepass</dt>
+				<dd>ストアのパスワードを指定します。例では［password］としていますが実際は第三者に推定しづらい文字列にしてください。</dd>
+				<dt>-alias</dt>
+				<dd>キーの別名を指定します。</dd>
+				<dt>-keypass</dt>
+				<dd>キーのパスワードを指定します。例では［password］としていますが実際は第三者に推定しづらい文字列にしてください。</dd>
+				<dt>-keyalg</dt>
+				<dd>暗号化アルゴリズムを指定します（ここではRSA）。</dd>
+				<dt>-validity</dt>
+				<dd>鍵ファイルの有効期間（日数）を指定します。鍵ファイルはアップデート等でもずっと使っていくため、十分な長さにしておきます。</dd>
+			</dl>
+			<p>コマンドを入力してEnterキーを押せば、キー情報の入力を促されます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-2.png" width="997" height="493" alt="" />
+			</div>
+			<p>姓名や組織名などの固有情報はご自分で決めたものを入力してください。国コード81は日本の意味です。<br />
+			日本語環境の場合、最後の［よろしいですか］との問いには、［はい］と入力してください。<br />
+			コマンドプロンプトで開いているフォルダにsample.keystoreという名前でキーストアファイルが作成されます。</p>
+
+
+			<h3 class="mian__title--h3--sub">5-1-2 キーストアファイルを使用したパッケージング</h3>
+			<p>パッケージへの署名にキーストアファイルを指定するには、4-1パッケージングスクリプトの実行時に追加オプションにて行います。以下に例を挙げます。</p>
+<pre class="main__pre--code">
+python C:\crosswalk-10.39.235.16\make_apk.py --package=com.example.sample --manifest=manifest.json --keystore-path=C:\Users\IEUser\Desktop\sample.keystore --keystore-alias=release --keystore-passcode=password --keystore-alias-passcode=password
+</pre>
+			<p>keystore-path、keystore-alias、keystore-passcodeおよびkeystore-alias-passcodeオプションが増えています。</p>
+			<dl class="main__dl--sub">
+				<dt>--keystore-path</dt>
+				<dd>keystore-pathではキーストアファイルの場所をファイル名付きで指定します。</dd>
+				<dt>--keystore-alias</dt>
+				<dd>キーストアファイルを作った時の別名を指定します。</dd>
+				<dt>--keystore-passcode</dt>
+				<dd>キーストアファイルを作った時のストアパスワードを指定します。</dd>
+				<dt>--keystore-alias-passcode</dt>
+				<dd>キーストアファイルを作った時のキーパスワードを指定します。</dd>
+			</dl>
+
+			<p>
+				作成したapkファイルをGoogle playデベロッパーコンソールにアップロードし申請します。他に必要な画像ファイルなどはGoogle playデベロッパーコンソールの指示に従ってください。
+			</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_05/5-1-3.png" width="1024" height="673" alt="" />
+			</div>
+
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">注意</h2>
+			<ul class="main__ul">
+				<li>環境設定やコマンド操作でホストPCに起きたいかなる不具合も保証いたしません。</li>
+				<li>ここで紹介している方法で開発できるAndroidゲームアプリは、すべてがGoogle Playで公開できることを保証するものではありません。</li>
+				<li>2015年8月時点での情報となります。ここで利用している各ソフトウェア等は常にアップデートされているため、表記と異なる場合があります。</li>
+				<li>［Google Playへのアプリ申請］に関してのご不明な点は<a href="https://support.google.com/googleplay/android-developer" target="_blank">Google Play デベロッパー ヘルプセンター</a>をご覧ください。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+

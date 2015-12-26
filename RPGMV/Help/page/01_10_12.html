@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>シーン制御</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">シーン制御</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>シーン制御</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">戦闘の処理</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_12_img01.png" height="313" width="292" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>敵グループを出現させて戦闘を行ないます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵グループ</dt>
+				<dd>対戦する敵グループを指定します。特定の敵グループと対戦させる場合は［直接指定］を選び、敵グループを指定します。敵グループのIDで指定するには［変数で指定］を選び、参照する変数を指定します。［ランダムエンカウントと同じ］を選ぶと、パーティがいるマップの［エンカウント］の設定に基づいて選ばれた敵グループが出現します。</dd>
+				<dt>逃走可</dt>
+				<dd>有効にすると戦闘中に［逃げる］のコマンドを有効にし、［勝った場合］［逃げた場合］のふたつに処理を分岐できます。</dd>
+				<dt>敗北可</dt>
+				<dd>有効にすると、パーティが全滅してもゲームオーバーにせず、［勝った場合］［負けた場合］のふたつに処理を分岐できます。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">ショップの処理</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_12_img02.png" height="359" width="292" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>武器や防具、アイテムの売買を行なうショップの処理を開始します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>商品リスト</dt>
+				<dd>販売するものを指定します。リストの空欄をダブルクリックすると表示されるウィンドウで［商品］と［価格］を指定します。価格は［標準］にするとデータに設定された価格、［指定］でこのイベントコマンドのみに適用する価格を指定します。</dd>
+				<dt>購入のみ</dt>
+				<dd>有効にすると、所持品の売却ができなくなります。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">名前入力の処理</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_12_img03.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの名前の入力画面を表示し、プレイヤーが入力したものに変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>名前の変更対象のアクターを指定します。</dd>
+				<dt>最大文字数</dt>
+				<dd>入力を受け付ける最大の文字数（1～16）を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+				<li>プレイ中の名前入力時は、方向ボタンでカーソルを移動し、決定ボタンで文字の追加、取り消しボタンで名前の最後尾の文字を削除できます。 </li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">メニュー画面を開く</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>メニュー画面を呼び出します。設定項目はありません。</p>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">セーブ画面を開く</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>セーブ画面を呼び出します。設定項目はありません。</p>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">ゲームオーバー</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>ゲームを強制終了し、ゲームオーバーの画面を表示します。設定項目はありません。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p07">
+			<h2 class="main__title--h2">タイトル画面に戻す</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>ゲームを強制終了し、タイトル画面に戻ります。設定項目はありません。</p>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

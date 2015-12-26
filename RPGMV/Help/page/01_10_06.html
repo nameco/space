@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>移動</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">移動</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>移動</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">場所移動</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_06_img01.png" height="350" width="332" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティの位置を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>位置</dt>
+				<dd>変更後の位置を指定します。特定の位置に移動させる場合は［直接指定］を選択し、［…］をクリックすると表示されるウィンドウで移動先の位置をクリックで指定します。マップのIDや座標で指定するには［変数で指定］を選択し、［ID］［X］［Y］に参照する変数を指定します。</dd>
+				<dt>向き</dt>
+				<dd>場所移動後のプレイヤーの向きを指定します。</dd>
+				<dt>フェード</dt>
+				<dd>場所移動の際の画面の切り替え方を指定します。［黒］では黒色、［白］では白色の表示にしてから移動先のマップを表示します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">乗り物の位置設定</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_06_img02.png" height="350" width="332" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>乗り物の位置を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>乗り物</dt>
+				<dd>対象の乗り物（小型船／大型船／飛行船）を指定します。</dd>
+				<dt>場所</dt>
+				<dd>変更後の位置を指定します。特定の位置に移動させる場合は［直接指定］を選択し、［…］をクリックすると表示されるウィンドウで移動先の位置をクリックで指定します。マップのIDや座標で指定するには［変数で指定］を選択し、［マップID］［X座標］［Y座標］に参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">イベントの位置設定</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_06_img03.png" height="435" width="332" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>イベントの位置を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>イベント</dt>
+				<dd>対象のイベントを指定します。［このイベント］にすると、イベント自身が位置を変える対象になります。移動させられるのは、同じマップにあるイベントに限られます。</dd>
+				<dt>場所</dt>
+				<dd>変更後の位置を指定します。特定の位置に移動させる場合は［直接指定］を選択し、［…］をクリックすると表示されるウィンドウで移動先の位置をクリックで指定します。マップの座標で指定するには［変数で指定］を選択し、［X］［Y］に参照する変数を指定します。</dd>
+				<dt>向き</dt>
+				<dd>場所移動後のプレイヤーの向きを指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">マップのスクロール</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_06_img04.png" height="189" width="262" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>プレイヤーの位置を変えずに、プレイ画面に表示されるマップの範囲を移動（スクロール）します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>方向</dt>
+				<dd>スクロール方向を指定します。</dd>
+				<dt>距離</dt>
+				<dd>移動距離（タイル数）を指定します。</dd>
+				<dt>速度</dt>
+				<dd>処理の速度（6段階）を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">移動ルートの設定</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>プレイヤーまたはマップイベントを、指定のルートに沿って強制移動させます。<br />詳細は［<a href="01_10_06_01.html">移動ルートの設定</a>］の項目を参照してください。</p>
+
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>移動ルートを設定されたキャラクターは、すぐに移動を開始します。</li>
+				<li>すでに移動ルートを設定しているキャラクターに対してこのイベントコマンドを実行すると、それまでの設定は破棄され、新しい設定のみが有効となります。以前の移動ルートによる移動が終了してから次の移動ルートを設定したい場合は、［移動が終わるまでウェイト］を有効にしてください。</li>
+				<li>［移動が終わるまでウェイト］を有効にすると、移動コマンドが終了するまでプレイヤーは操作できません（並列処理中は除く）。このとき、移動ルートを指定したキャラクターが障害物にぶつかるなどして移動コマンドが実行できなくなると、そこで処理が停止したままになります。このような事態は、オプションの［移動できない場合は無視］を有効にするなどの方法で回避してください。</li>
+				<li>このイベントコマンドでプレイヤーが移動しても、累計の移動歩数には加算されません。</li>
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">乗り物の乗降</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>乗り物の乗り降りを操作します。乗っている場合は地上に降り、乗っていない場合は乗ります。設定項目はありません。</p>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>このイベントコマンドは、プレイヤーが［決定］キーで行なう乗り降りの操作を強制実行するものです。通常の乗り降りの操作ができない場合（乗れる乗り物がないとき、地上に降りられないとき）は何も起こりません。</li>
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>
