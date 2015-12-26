@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>職業の設定</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v03">職業の設定</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_08.html">データベース</a></li>
+			<li>&gt;</li>
+			<li>職業の設定</li>
+		</ul>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">データの役割</h2>
+			<p>
+				アクターの能力に関する特徴をまとめたのが職業のデータです。アクターは、いずれかの職業に属する必要があり、その設定をもとにレベルアップの仕方や能力値の上がり方、習得できるスキルなどが決まります。職業固有の特徴も付与できます。
+			</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">設定項目の内容</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_08_02_img01.png" width="769" height="631" alt="" />
+			</div>
+
+			<dl class="main--dl">
+				<h3 class="main__title--h3--sub">
+					名前
+				</h3>
+				<p>職業の名前です。プレイ中、メニュー画面やステータス一覧画面の上部に表示されます。</p>
+
+				<h3 class="main__title--h3--sub">
+					経験値曲線
+				</h3>
+				<p>レベルアップの基準となる経験値の設定です。アクターがレベルごとの必要経験値を獲得するごとに、アクターのレベルが1段階アップし、能力値が上昇したりスキルを習得したりします。<br />
+					<br />
+					必要経験値は、設定欄の［…］をクリックすると表示されるウィンドウで下記の4つの値をもとに設定します。ウィンドウの［次のレベルまで］タブでは、各レベルの必要経験値が一覧表示され、背景にはグラフで示されます。これらを参考にしながら設定するとよいでしょう。［累計］タブでは、各レベルに達するまでの経験値の累計を表示します。
+				</p>
+				<div class="al-c mb20px">
+					<img src="../inc/img/01_08_02_img02.png" width="582" height="551" alt="" />
+				</div>
+				<dl class="main__dl--sub">
+					<dt>基本値 </dt>
+					<dd>必要経験値を算出するための基準値です。値を小さくすると全体的に必要経験値が下がります。</dd>
+					<dt>補正値 </dt>
+					<dd>各レベルの必要経験値に指定値を加算します。</dd>
+					<dt>増加度A </dt>
+					<dd>必要経験値の増加量を調節します。値を大きくすると、レベルの上昇に応じて必要経験値が比例的に増加します。</dd>
+					<dt>増加度B</dt>
+					<dd>必要経験値の増加量を調節します。値を大きくすると、主に高いレベルで必要経験値の増加率が大きくなります。</dd>
+				</dl>
+
+				<h3 class="main__title--h3--sub">
+					能力値成長曲線
+				</h3>
+				<p>レベルごとの能力値の設定です。グラフをダブルクリックすると設定ウィンドウが開きます。設定方法は後述の［<a href="#p01">能力値成長曲線の設定方法</a>］をご覧ください。</p>
+
+				<h3 class="main__title--h3--sub">
+					スキル
+				</h3>
+				<p>レベルアップに応じて習得するスキルです。欄内をダブルクリックすると表示されるウィンドウで、習得するレベルとスキルを指定します。［メモ］はゲーム作成中のメモ書きに使えます。</p>
+
+				<h3 class="main__title--h3--sub">
+					特徴
+				</h3>
+				<p>この職業を設定したアクターに与える特徴です。詳細は［<a href="01_08_15.html">特徴の設定方法</a>］を参照してください。</p>
+
+				<h3 class="main__title--h3--sub">
+					メモ
+				</h3>
+				<p>ゲーム作成中のメモ書きに使えます。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2" id="p01">能力値成長曲線の設定方法</h2>
+			<p>［能力値成長曲線］のウィンドウでは、レベルごとの能力値を以下の項目をもとに指定します。能力値の名前のタブをクリックすることで編集対象を切り替えられます。編集後［OK］をクリックすると指定した値が反映されます（［キャンセル］をクリックすると内容が破棄されます）。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_08_02_img03.png" width="632" height="489" alt="" />
+			</div>
+
+			<dl class="main__dl">
+				<dt>簡単設定</dt>
+				<dd>全レベルの能力値にあらかじめ用意された値を適用します。値のパターンには［A］～［E］の5種類あり、それぞれのボタンをクリックすると適用されます。</dd>
+				<dt>レベル／値 </dt>
+				<dd>レベルごとの能力値を直接編集します。［レベル］で対象のレベル数（1～99）を指定した後、そのレベルのときの能力値を［値］（最大HP／最大MPは1～9999、これら以外は1～999）に指定します。</dd>
+				<dt>曲線生成 </dt>
+				<dd>レベル1とレベル99のときの値をもとに、その間のレベルの値を自動算出します。<br />
+					<br />
+					クリックすると表示される［曲線生成］ウィンドウで、［レベル1］［レベル99］に、それぞれのレベルのときの値（最大HP／最大MPは1～9999、これら以外は1～999）を指定します。<br />
+					<br />
+					次にスライダーで成長タイプを決めます。左側（早熟）にするとレベルの上昇に合わせて成長率（能力値の上昇分）が緩やかになり、右側（晩熟）にするほど成長率が高くなります。［OK］ボタンをクリックすると指定内容に基づいて能力値が設定されます。</dd>
+				<dt>グラフ</dt>
+				<dd>各レベルに設定された能力値を棒グラフで表示します。表示範囲をクリック／ドラッグすると、その箇所に応じたレベルの能力値が取得できます。</dd>
+			</dl>
+
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

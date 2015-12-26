@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>バトル</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">バトル</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>バトル</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">敵キャラのHP増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img01.png" height="328" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラのHPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。［敵グループ全体］とすると、すべての敵キャラが対象になります。</dd>
+				<dt>操作</dt>
+				<dd>［増やす］［減らす］のどちらかを指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>HPの増減量を指定します。一定の値を指定する場合は［定数］を選んで値を入力します。変数の値で指定する場合は［変数］を選んで参照する変数を指定します。</dd>
+				<dt>戦闘不能を許可</dt>
+				<dd>有効にすると、HPが0以下になったとき戦闘不能とします。無効の場合はHPが0以下になっても1にします。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">敵キャラのMP増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img02.png" height="300" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラのMPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。［敵グループ全体］にすると、戦闘中のすべての敵キャラが対象になります。</dd>
+				<dt>操作</dt>
+				<dd>［増やす］［減らす］のどちらかを指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>MPの増減量を指定します。一定の値を指定する場合は［定数］を選んで値を入力します。変数の値で指定する場合は［変数］を選んで参照する変数を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">敵キャラのTP増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img03.png" width="352" height="300" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラのTPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。［敵グループ全体］にすると、戦闘中のすべての敵キャラが対象になります。</dd>
+				<dt>操作</dt>
+				<dd>［増やす］［減らす］のどちらかを指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>TPの増減量を指定します。一定の値を指定する場合は［定数］を選んで値を入力します。変数の値で指定する場合は［変数］を選んで参照する変数を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">敵キャラのステート変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img04.png" height="251" width="262" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラのステートを変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。［敵グループ全体］にすると、戦闘中のすべての敵キャラが対象になります。</dd>
+				<dt>操作</dt>
+				<dd>［付加］［解除］のどちらかを指定します。</dd>
+				<dt>ステート</dt>
+				<dd>不可／解除するステートの種類を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">敵キャラの全回復</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img05.png" height="134" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラのHPとMPを最大値まで回復し、すべてのステートを解除します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。［敵グループ全体］にすると、戦闘中のすべての敵キャラが対象になります。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">敵キャラの出現</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img06.png" height="134" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵グループのデータで［途中から出現］のオプションが設定されている敵キャラを出現させます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p07">
+			<h2 class="main__title--h2">敵キャラの変身</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img07.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>出現中の敵キャラを、別の敵キャラに変身させます。変身した敵キャラのHPとMPは、変身前の敵キャラの値を引き継ぎます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>変身させる敵キャラを指定します。</dd>
+				<dt>変身</dt>
+				<dd>変身後の敵キャラを指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p08">
+			<h2 class="main__title--h2">戦闘アニメーションの表示</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img08.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラを対象として、アニメーションを表示します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>敵キャラ</dt>
+				<dd>対象の敵キャラを指定します。</dd>
+				<dt>アニメーション</dt>
+				<dd>表示するアニメーションを指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p09">
+			<h2 class="main__title--h2">戦闘行動の強制</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_15_img09.png" height="285" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>敵キャラ／アクターに特定のスキルを強制実行させます。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>行動主体</dt>
+				<dd>対象の敵キャラ／アクターを指定します。</dd>
+				<dt>戦闘行動</dt>
+				<dd>［スキル］で強制実行するスキルを指定します。［行動対象］でスキルの標的を［ラストターゲット］（直前の行動者の標的と同じ）、［ランダム］（不作為に選定）、［Index X］（Xは1～8／詳細は備考参照）から指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p10">
+			<h2 class="main__title--h2">バトルの中断</h2>
+			<h3 class="main__title--h3--sub">機能 </h3>
+			<p>戦闘を強制終了してマップに戻ります。設定項目はありません。</p>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントのみで動作します。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+

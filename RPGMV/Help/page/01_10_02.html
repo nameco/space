@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ゲーム進行</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">ゲーム進行</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>ゲーム進行</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">スイッチの操作</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_02_img01.png" width="352" height="245" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>スイッチの値（ON／OFF）を変更します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>スイッチ</dt>
+				<dd>変更対象のスイッチを指定します。ひとつのスイッチを操作する場合は［単独］を選び、対象のスイッチを指定します。連続する番号のスイッチの値をまとめて変える場合は［範囲］を選び、スイッチ番号の範囲を指定します。</dd>
+				<dt>操作</dt>
+				<dd>スイッチに代入する値（ON／OFF）を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">変数の操作</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_02_img02.png" width="462" height="445" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>変数に格納されている値を変更します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>変数</dt>
+				<dd>値を変える変数を指定します。ひとつの変数を操作する場合は［単独］を選び、対象の変数を指定します。連続する番号の変数をまとめて操作する場合は［範囲］を選び、変数番号の範囲を指定します。</dd>
+
+				<dt>操作</dt>
+				<dd>値の計算方法を指定します（備考参照）。［変数］で指した変数の値は、操作前の変数の値、計算方法、オペランドの値に基づいて計算した値に変わります。</dd>
+
+				<dt>オペランド</dt>
+				<dd>［操作］の計算に用いる値を指定します（備考参照）。</dd>
+			</dl>
+
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>
+					［操作］で指定する計算方法の内容は以下のとおりです。
+					<table class="main__table--type01">
+						<tr>
+							<th>代入</th>
+							<td>オペランドの値を代入（計算なし）</td>
+						</tr>
+						<tr>
+							<th>加算</th>
+							<td>［操作前の変数の値＋オペランド］の計算値を代入</td>
+						</tr>
+						<tr>
+							<th>減算</th>
+							<td>［操作前の変数の値－オペランド］の計算値を代入</td>
+						</tr>
+						<tr>
+							<th>乗算</th>
+							<td>［操作前の変数の値×オペランド］の計算値を代入</td>
+						</tr>
+						<tr>
+							<th>除算</th>
+							<td>［操作前の変数の値÷オペランド］の計算値を代入</td>
+						</tr>
+						<tr>
+							<th>剰余</th>
+							<td>［操作前の変数の値÷オペランド］の余りを代入</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					［オペランド］で指定する値の内容は以下のとおりです。
+					<table class="main__table--type01">
+						<tr>
+							<th style="width: 80px;">定数</th>
+							<td>固定値を適用します。右欄に値を指定します。</td>
+						</tr>
+
+						<tr>
+							<th>変数</th>
+							<td>変数の値を適用します。参照する変数を指定します。</td>
+						</tr>
+
+						<tr>
+							<th>乱数</th>
+							<td>乱数（不作為に決まる数）の値を適用します。発生させる乱数の範囲（</td>
+						</tr>-9999万9999～9999万9999）を指定します。
+
+						<tr>
+							<th>ゲームデータ</th>
+							<td>ゲームのプレイ状況に関する値を適用します。［…］をクリックすると開くウィンドウで参照する情報を指定します（下記参照）。</td>
+						</tr>
+
+						<tr>
+							<th>スクリプト</th>
+							<td>入力したJavaScriptの評価結果を値に適用します。</td>
+						</tr>
+					</table>
+				</li>
+				<li>
+					［オペランド］に［ゲームデータ］を指定した場合は、オペランドの値とするデータを以下からひとつ指定します。
+					<table class="main__table--type01">
+						<tr>
+							<th style="width: 80px;">アイテム</th>
+							<td>指定のアイテムの所有数を適用します。</td>
+						</tr>
+						<tr>
+							<th>武器</th>
+							<td>指定の武器の所有数を適用します。</td>
+						</tr>
+						<tr>
+							<th>防具</th>
+							<td>指定の防具の所有数を適用します。</td>
+						</tr>
+						<tr>
+							<th>アクター</th>
+							<td>アクターのパラメータ（HP、MPなど）の値を適用します。対象のアクターとパラメータを指定します。</td>
+						</tr>
+						<tr>
+							<th>敵キャラ</th>
+							<td>敵キャラのパラメータ（HP、MPなど）の値を適用します。対象の敵キャラとパラメータを指定します。この項目は戦闘時のみ有効です。</td>
+						</tr>
+						<tr>
+							<th>キャラクター</th>
+							<td>
+								プレイヤーまたはイベントの座標や向きを使用します。
+								<table class="main__table--type03">
+									<tr>
+										<th>マップX、マップY</th>
+										<td>：現在地のマップ座標</td>
+									</tr>
+									<tr>
+										<th>向き</th>
+										<td>：現在の向き（上＝8／左＝4／右＝6／下＝2）</td>
+									</tr>
+									<tr>
+										<th>画面X、画面Y</th>
+										<td>：画面上の表示位置の座標（ドット）</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<th>パーティ</th>
+							<td>パーティ内で指定した位置にいるアクターのIDを使用します。</td>
+						</tr>
+						<tr>
+							<th>その他</th>
+							<td>その他のデータを使用します。</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">セルフスイッチの操作</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_02_img03.png" width="262" height="212" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>セルフスイッチの値を操作します。</p>
+
+			<h3 class="main__title--h3--sub">設定項目</h3>
+
+			<dl class="main__dl--sub">
+				<dt>セルフスイッチ</dt>
+				<dd>対象のセルフスイッチ（A～D）を指定します。</dd>
+				<dt>操作</dt>
+				<dd>スイッチに代入する値（ON／OFF）を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">タイマーの操作</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_02_img04.png" width="262" height="212" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>制限時間（残り時間）を計測するタイマーを始動／停止します。タイマーを始動すると画面右上に残り時間が自動で表示されます。メニューの表示中は、タイマーのカウントダウンは一時停止します（計測の対象外になります）。タイマーの残り時間で処理を分岐させるには、［条件分岐］のイベントコマンドなどを使います。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>操作</dt>
+				<dd>制限時間の計測を開始するには［始動］、計測を終了するには［停止］を指定します。</dd>
+				<dt>時間</dt>
+				<dd>［操作］に［始動］を指定した場合に、制限時間（0分0秒～99分59秒）を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+
+	</div><!-- /main -->
+
+</body>
+</html>

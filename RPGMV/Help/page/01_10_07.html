@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>キャラクター</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">キャラクター</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>キャラクター</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">透明状態の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_07_img01.png" height="141" width="262" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップ上の移動するパーティの表示（透明化）を制御します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>透明状態 </dt>
+				<dd>見えなくするには［ON］、表示する場合は［OFF］を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">隊列歩行の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_07_img02.png" height="141" width="262" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティの2番目以降のアクターの歩行画像を表示するかどうかを制御します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>隊列歩行 </dt>
+				<dd>表示するには［ON］、表示しない場合は［OFF］を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>パーティが5人以上いる場合、歩行画像が表示されるのは先頭から4人のみです。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">隊列メンバーの集合</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<div>パーティの各アクターの歩行画像を、先頭のアクターと同じ位置に表示します。設定項目はありません。</div>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">アニメーションの表示</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_07_img04.png" height="217" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>マップ上にアニメーションを表示します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>キャラクター</dt>
+				<dd>表示場所をプレイヤーやイベントの位置をもとに指定します。</dd>
+				<dt>アニメーション</dt>
+				<dd>表示するアニメーションを指定します。</dd>
+				<dt>完了までウェイト</dt>
+				<dd>有効にすると、アニメーションの表示が終わるまでイベント処理の進行を停止します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+				<li>バトル中にアニメーションを表示したい場合は、［戦闘アニメーションの表示］のイベントコマンドを使用してください。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">フキダシアイコンの表示</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_07_img05.png" height="488" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>パーティやイベントの頭上に、感情を表現するアイコンをフキダシ付きで表示します。アイコンには驚きを表現する“！”や、ひらめきを表現する電球の絵柄など全10種類があります。さらにユーザー定義で独自のフキダシアイコンを設定することができます。</p>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_07_img06.png" height="300" width="300" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>キャラクター</dt>
+				<dd>表示場所をプレイヤーやイベントの位置をもとに指定します。</dd>
+				<dt>フキダシアイコン</dt>
+				<dd>表示するフキダシアイコンを指定します。</dd>
+				<dt>完了までウェイト</dt>
+				<dd>有効にすると、フキダシアイコンの表示が終わるまでイベント処理の進行を停止します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">イベントの一時消去</h2>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>実行中のイベントを一時的に消去します。設定項目はありません。消去した状態はパーティが他のマップに移動するまで継続します。</p>
+			<h3 class="main__title--h3--sub">備考 </h3>
+			<ul class="main__ul">
+				<li>バトルイベントでは使用できません。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>ローカルサーバーの構築</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v06">ローカルサーバーの構築</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>資料集</li>
+			<li>&gt;</li>
+			<li>ローカルサーバーの構築</li>
+		</ul>
+
+
+		<div class="main__section" id="p01">
+			<p>プロジェクトフォルダ内のindex.htmlをブラウザで直接開くとセキュリティーの関係上そのままでは開くことができません。<br />
+			PC内にローカルサーバーを構築する必要があります。ここではその方法をご紹介します。</p>
+			<h2 class="main__title--h2">Windowsのローカルサーバー構築</h2>
+			<h3 class="main__title--h3">Internet Information Serviceの有効化</h3>
+			<ol class="main__ol">
+				<li>［コントロールパネル］の［プログラム］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img01.png" width="627" height="415" alt="" />
+					</div>
+				</li>
+				<li>［Windowsの機能の有効化または無効化］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img02.png" width="605" height="92" alt="" />
+					</div>
+				</li>
+				<li class="mb30px">［Windowsの機能］内で、［インターネット インフォメーション サービス］をクリックして有効にします。
+					<div class="al-c mt5px">
+						<img src="../inc/img/01_11_08_img03.png" width="786" height="450" alt="" />
+					</div>
+					※チェックではなく塗りつぶされた状態
+				</li>
+				<li>［OK］をクリックします。</li>
+			</ol>
+			<h3 class="main__title--h3">ファイルの設置箇所</h3>
+			<p>インターネット インフォメーション サービスを有効にすると、ローカルサーバー用のフォルダが自動で作成されます。そのフォルダ内にプロジェクトフォルダを設置します。</p>
+			<ol class="main__ol">
+				<li>［コンピューター］→［ローカルディスクC:］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img04.png" width="524" height="136" alt="" />
+					</div>
+				</li>
+				<li>［inetpub］→［wwwroot］フォルダを開きます。</li>
+				<li>［wwwroot］フォルダ内にプロジェクトフォルダを設置します。</li>
+			</ol>
+			<h3 class="main__title--h3">ブラウザーからのアクセス方法</h3>
+			<ol class="main__ol">
+				<li>ブラウザーを開きます。</li>
+				<li>アドレスバーに以下のとおりに入力して確定します。<br />
+				http://(IPアドレス)/プロジェクトフォルダ名/<br />
+				or<br />
+				http://(コンピューター名)/プロジェクトフォルダ名/<br />
+				or<br />
+				http://localhost/プロジェクトフォルダ名/<br />
+				<br />
+				例）http://192.168.0.1/プロジェクトフォルダ名/
+				</li>
+			</ol>
+			<h3 class="main__title--h3">コンピューター名の調べ方</h3>
+			<ol class="main__ol">
+				<li>適当なフォルダウィンドウを開き、サイドバーの［コンピューター］を右クリックし、［プロパティ］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img05.png" width="431" height="304" alt="" />
+					</div>
+				</li>
+				<li>［システム］ウィンドウの、［コンピューター名、ドメインおよびワークグループの設定］の中の、［コンピューター名］を確認します。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img06.png" width="376" height="131" alt="" />
+					</div>
+				</li>
+			</ol>
+			<h3 class="main__title--h3">IPアドレスの調べ方</h3>
+			<ol class="main__ol">
+				<li>［コントロールパネル］の［ネットワークの状態とタスクの表示］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img07.png" width="636" height="348" alt="" />
+					</div>
+				</li>
+				<li>ネットワーク接続状態画面の図の項目［接続：ローカルエリア接続］をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img08.png" width="583" height="79" alt="" />
+					</div>
+				</li>
+				<li>ローカルエリア接続の状態画面が出ますので［詳細］をクリックします。<br />
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img09.png" width="435" height="231" alt="" />
+					</div>
+				</li>
+				<li>［IPv4アドレス］の値がIPアドレスです。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img10.png" width="258" height="49" alt="" />
+					</div>
+				</li>
+			</ol>
+			<h3 class="main__title--h3">localhostの設定方法</h3>
+			<p>ブラウザでhttp://localhost/にアクセスするにはhostsファイルの設定が必要になります。</p>
+			<ol class="main__ol mb50px">
+				<li>［スタート］ ボタンをクリックし、［すべてのプログラム］、［アクセサリ］ を順にクリックします。［メモ帳］ を右クリックし、［管理者として実行］ をクリックします。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img11.png" width="490" height="583" alt="" />
+					</div>
+				</li>
+				<li>メモ帳の［ファイル］→［開く］をクリックし、［C:\Windows\System32\drivers\etc］に移動します。ここで［すべてのファイル］を選択しhostsファイルを開きます。
+					<div class="al-c mt5px mb30px">
+						<img src="../inc/img/01_11_08_img12.png" width="960" height="540" alt="" />
+					</div>
+				</li>
+				<li>ファイル内の下記の場所を変更して保存します。<br />
+■変更前
+<pre class="main__pre--code">
+#   127.0.0.1       localhost
+</pre>
+
+■変更後
+<pre class="main__pre--code">
+127.0.0.1       localhost
+</pre>
+				</li>
+				<li>Windowsを再起動します。
+				</li>
+			</ol>
+
+
+			<h2 class="main__title--h2">Mac OSXのローカルサーバー構築</h2>
+			<p>Macにはデフォルトでapacheがインストールされています。apacheを起動するとローカルサーバーを使用することができます。</p>
+			<h3 class="main__title--h3">apacheの基本操作</h3>
+			<p>ターミナル上でコマンドを打ち、apacheを起動します。</p>
+			<h3 class="main__title--h3--sub">apacheの起動</h3>
+<pre class="main__pre--code">
+$ sudo apachectl start
+</pre>
+
+			<h3 class="main__title--h3--sub">apacheの終了</h3>
+<pre class="main__pre--code mb30px">
+$ sudo apachectl stop
+</pre>
+
+
+			<h3 class="main__title--h3">ファイルの設置箇所</h3>
+			<p>下記の箇所にプロジェクトフォルダを設置します。</p>
+<pre class="main__pre--code">
+/Library/WebServer/Documents
+</pre>
+			<p>※プロジェクトフォルダは新規プロジェクトを作成・保存したときに［場所］で設定した箇所にあります。</p>
+
+
+			<h3 class="main__title--h3">ブラウザーからのアクセス方法</h3>
+			<ol class="main__ol">
+				<li>ブラウザーを開きます。</li>
+				<li>アドレスバーに以下のとおりに入力して確定します。<br />
+				http://localhost/プロジェクトフォルダ名/
+				</li>
+			</ol>
+		</div><!-- /main__section -->
+
+
+
+
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>武器／防具の設定</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v03">武器／防具の設定</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_08.html">データベース</a></li>
+			<li>&gt;</li>
+			<li>武器／防具の設定</li>
+		</ul>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">データの役割</h2>
+			<p>
+				アクターの装備品を表現するのが武器と防具のデータです。装備中のアクターを対象に、特定の能力値を増減したり、特別な能力などを付与したりできます。
+			</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">設定項目の内容</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_08_05_img01.png" height="257" alt="" />
+				<img src="../inc/img/01_08_05_img02.png" height="257" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">
+				基本設定
+			</h3>
+			<h3 class="main__title--h3--sub">
+				名前
+			</h3>
+			<p>武器／防具の名前です。名前が長いとプレイ画面ですべて表示されない場合があります。</p>
+
+			<h3 class="main__title--h3--sub">
+				アイコン
+			</h3>
+			<p>プレイ中、武器／防具の名前に添えて表示する画像です。ダブルクリックすると開く［画像の選択］ウィンドウで画像を指定します。</p>
+
+			<h3 class="main__title--h3--sub">
+				説明
+			</h3>
+			<p>プレイ画面で項目を選んだときに表示される説明です。</p>
+
+			<h3 class="main__title--h3--sub">
+				武器タイプ／防具タイプ
+			</h3>
+			<p>武器／防具の種類です。アクターや職業の特徴設定で、装備できるかを判定する基準になります。選択できる武器／防具の種類は、［<a href="01_08_14.html">用語</a>］の設定で変更できます。</p>
+
+			<h3 class="main__title--h3--sub">
+				価格
+			</h3>
+			<p>お店で買うときの価格です。売却時の価格は一律半額になります。0にすると売却できないものになります。</p>
+
+			<h3 class="main__title--h3--sub">
+				アニメーション（武器データのみ）
+			</h3>
+			<p>この武器で攻撃した時のアニメーションを設定します。</p>
+
+			<h3 class="main__title--h3--sub">
+				装備タイプ（防具データのみ）
+			</h3>
+			<p>装備する部位（盾／頭／身体／装飾品）です。アクターはそれぞれの部位に、対応する防具をひとつずつ装備できます。</p>
+
+			<h3 class="main__title--h3">
+				能力値変化量
+			</h3>
+			<p>装備中のアクターの各能力値に加える値です。［最大HP］［最大MP］は-5000～5000、これら以外は-500～500の範囲で指定します。マイナス値を設定すると能力値が減少します。</p>
+
+			<h3 class="main__title--h3">
+				特徴
+			</h3>
+			<p>装備中のアクターに付与する特徴です。設定欄の各行をダブルクリックして表示されるウィンドウで内容を定義します。詳細は［<a href="01_08_15.html">特徴の設定方法</a>］を参照してください。</p>
+
+			<h3 class="main__title--h3">
+				メモ
+			</h3>
+			<p>ゲーム作成中のメモ書きに使えます。</p>
+
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

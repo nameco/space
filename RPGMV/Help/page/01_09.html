@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>イベント</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v04">イベント</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>イベント</li>
+		</ul>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">イベントとは</h2>
+			<p>
+RPGでは人物との会話、宝箱からのアイテムの入手、ボス敵との戦闘などのできごとを通してゲームが進行します。本ソフトでは、そうした個々のできごとを“イベント”というデータで用意します。<br />
+<br />
+イベントとは、ゲーム中で何らかの処理を行なう仕掛けのことです。たとえばプレイヤーが話しかけるとメッセージを返す人物キャラクターは、イベントに人物の画像を割り当て、画面に文章を表示させる処理を持たせることで表現できます。<br />
+<br />
+このイベントをプレイ状況やプレイヤーの働きかけによって“作動”させることで、ゲームにいろんなできごとをもたらす仕組みです。
+			</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">イベントの種類</h2>
+			<p>イベントには以下の3種類があります。ゲームのストーリーや進行に関する処理は“マップイベント”で作成します。</p>
+			<dl class="main__dl">
+				<dt>マップイベント</dt>
+				<dd>マップ画面で実行するイベントです。人物との会話シーン、アイテムを入手できる宝箱などを表現するのに使用します。また画像を持たないイベントにより、プレイヤーの場所移動や演出シーンなど、ゲームの仕組みや進行に関する処理も定義できます。<br />
+					<br />
+					作成・編集は、メインウィンドウのツールバーで［イベント］のボタン（またはメニューバーの ［モード］ →［イベント］）をクリックしてイベントの編集モードを切り替えることで行なえます。
+				</dd>
+				<dt>バトルイベント </dt>
+				<dd>戦闘画面で実行するイベントです。たとえば“敵のHPが一定以下になったときに変身する”といった処理に使用します。作成・編集はデータベースの［<a href="01_08_07.html">敵グループ</a>］で行ないます。</dd>
+				<dt>コモンイベント </dt>
+				<dd>汎用的に実行するイベントです。マップイベントやバトルイベントから呼び出したり、特殊なアイテムを使用したときの処理を設定したりするのに使います。作成・編集はデータベースの ［<a href="01_08_11.html">コモンイベント</a>］ のタブで行ないます。</dd>
+			</dl>
+
+		</div><!-- /main__section -->
+
+
+	</div><!-- /main -->
+
+</body>
+</html>

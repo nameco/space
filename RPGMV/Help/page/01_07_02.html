@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>マップデータの操作</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v02">マップデータの操作</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_07.html">マップ</a></li>
+			<li>&gt;</li>
+			<li>マップデータの操作</li>
+		</ul>
+		<p>マップリストでマップデータの項目を右クリックすると、そのマップを対象に設定変更やコピーなどの操作が行なえます。各項目の機能は以下のとおりです。</p>
+
+		<div class="main__section">
+			<h2 class="main__title--h2">コンテキストメニューによる操作</h2>
+			<p>マップリストでマップデータの項目を右クリックすると、そのマップを対象に設定変更やコピーなどの操作が行なえます。各項目の機能は以下のとおりです。</p>
+			<dl class="main__dl">
+				<dt>編集 </dt>
+				<dd>マップデータの設定ウィンドウを開きます。設定項目の詳細は［<a href="01_07_03.html">マップデータの設定</a>］をご覧ください。</dd>
+				<dt>新規</dt>
+				<dd>新しいマップデータを追加します。設定項目の詳細は［<a href="01_07_03.html">マップデータの設定</a>］をご覧ください。</dd>
+				<dt>ロード</dt>
+				<dd>サンプルのデータをもとに新しいマップデータを作成します。表示されるウィンドウの一覧でデータ名をクリックして内容を確認し、［OK］をクリックします。
+					<div class="al-c mt10px mb20px">
+						<img src="../inc/img/01_07_02_img01.png" width="704" height="531" alt="" />
+					</div>
+				</dd>
+				<dt>コピー</dt>
+				<dd>マップデータをクリップボードに取り込みます。</dd>
+				<dt>貼り付け </dt>
+				<dd>クリップボード内のマップデータを追加します。</dd>
+				<dt>削除</dt>
+				<dd>マップデータを削除します。</dd>
+				<dt>シフト </dt>
+				<dd>マップ全体のタイル配置をずらします。ずらす方向とタイル数を指定します。</dd>
+				<dt>ダンジョン生成</dt>
+				<dd>迷路状のマップを自動生成します。詳しくは［<a href="01_05.html#p06">補助ツールの使い方</a>］の項目をご覧ください。</dd>
+				<dt>画像として保存</dt>
+				<dd>選択したマップを画像形式で保存します。<br />
+				</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section">
+			<h2 class="main__title--h2">マップのグループ化</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_07_02_img04.png" width="256" height="319" alt="" />
+			</div>
+			<p>マップリスト上のマップデータの項目を別の項目にドラッグすると、後者のマップデータの下位に表示されます。街のマップの下に、建物の内部マップをまとめるというように、マップデータをグループ化して管理するのに便利です。下位に移動したマップは、プロジェクト名のフォルダにドラッグすれば最上層に移動できます。<br />
+				<br />
+				この階層表示はマップリスト上の表示の仕方のみを変えるものです。マップのデザインや設定には一切影響を与えません。
+			</p>
+
+		</div><!-- /main__section -->
+
+
+	</div><!-- /main -->
+
+</body>
+</html>

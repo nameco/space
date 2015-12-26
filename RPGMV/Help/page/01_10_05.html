@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>アクター</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v05">アクター</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li><a href="01_10.html">イベントコマンド</a></li>
+			<li>&gt;</li>
+			<li>アクター</li>
+		</ul>
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">HPの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img01.png" height="377" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのHPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>HPの増減値を指定します。一定の値にする場合は［定数］を選び、値（1～9999）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>戦闘不能を許可</dt>
+				<dd>有効にすると、HPの減少によって0以下になった場合に戦闘不能状態にします。無効にすると、HPが0以下になった場合に1に調整されます。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">MPの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img02.png" height="349" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのMPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>MPの増減値を指定します。一定の値にする場合は［定数］を選び、値（1～9999）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">TPの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img03.png" height="349" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのTPを増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>TPの増減値を指定します。一定の値にする場合は［定数］を選び、値（1～100）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">ステートの変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img04.png" height="300" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのステートを変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（付加／解除）を指定します。</dd>
+				<dt>ステート</dt>
+				<dd>操作対象のステートを指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">全回復</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img05.png" height="183" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのHPとMPを最大値まで回復し、すべてのステートを解除します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">経験値の増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img06.png" height="377" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの経験値を増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+
+				<dt>オペランド</dt>
+				<dd>経験値の増減値を指定します。一定の値にする場合は［定数］を選び、値（1～9999999）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+
+				<dt>レベルアップを表示</dt>
+				<dd>有効にすると、経験値を増加によってレベルアップした場合、プレイ画面にその旨を知らせるメッセージを表示します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p07">
+			<h2 class="main__title--h2">レベルの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img07.png" height="377" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのレベル数を増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>レベル数の増減値を指定します。一定の値にする場合は［定数］を選び、値（1～98）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>レベルアップを表示</dt>
+				<dd>有効にすると、レベルアップした場合、プレイ画面にその旨を知らせるメッセージを表示します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p08">
+			<h2 class="main__title--h2">能力値の増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img08.png" height="404" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの能力値を増減します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します（［パーティ全体］にするとパーティ内のすべてのアクターが対象になります）。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>能力値</dt>
+				<dd>増減させる能力値の種類を指定します。</dd>
+				<dt>操作</dt>
+				<dd>操作の内容（増やす／減らす）を指定します。</dd>
+				<dt>オペランド</dt>
+				<dd>能力値の増減値を指定します。一定の値にする場合は［定数］を選び、値（1～9999）を入力します。変数で値を指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p09">
+			<h2 class="main__title--h2">スキルの増減</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img09.png" height="300" width="352" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターが使用できるスキルを操作します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。特定のアクターを対象とする場合は［固定］を選び、アクターを指定します。ID番号で対象アクターを指定する場合は［変数］を選び、参照する変数を指定します。</dd>
+				<dt>操作</dt>
+				<dd>スキルを使用可能にするには［覚える］、使用不可にするには［忘れる］を指定します。</dd>
+				<dt>スキル</dt>
+				<dd>操作対象のスキルを指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p10">
+			<h2 class="main__title--h2">装備の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img10.png" height="244" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの装備を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。</dd>
+				<dt>装備タイプ</dt>
+				<dd>変更する装備の種類を指定します。</dd>
+				<dt>装備品</dt>
+				<dd>新しく装備する装備品を指定します。パーティが指定した装備品をもっている必要があります。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>指定の装備品をパーティが所持していない場合、装備は変更されません。何らかの装備品を強制的に装備させるには、あらかじめ［武器の増減］［防具の増減］のイベントコマンドで、装備品を持たせておく必要があります。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p11">
+			<h2 class="main__title--h2">名前の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img11.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの名前を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。</dd>
+				<dt>名前 </dt>
+				<dd>変更後の名前を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p12">
+			<h2 class="main__title--h2">職業の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img12.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの職業を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。</dd>
+				<dt>職業</dt>
+				<dd>変更後の職業を指定します。</dd>
+			</dl>
+			<h3 class="main__title--h3--sub">備考</h3>
+			<ul class="main__ul">
+				<li>職業を変更すると、アクターのレベルは1になります。［レベルの増減］や［経験値の増減］などを同時に設定すると職業変更後のアクターのステータスを調整することができます。</li>
+				<li>装備できない武器や防具は、自動で装備が解除されます。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p13">
+			<h2 class="main__title--h2">二つ名の変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img13.png" height="189" width="222" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターの二つ名を変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。</dd>
+				<dt>二つ名</dt>
+				<dd>変更後の二つ名を指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p14">
+			<h2 class="main__title--h2">プロフィールの変更</h2>
+			<div class="al-c mt20px mb20px">
+				<img src="../inc/img/01_10_05_img14.png" height="214" width="422" alt="" />
+			</div>
+			<h3 class="main__title--h3--sub">機能</h3>
+			<p>アクターのプロフィールを変更します。</p>
+			<h3 class="main__title--h3--sub">設定項目</h3>
+			<dl class="main__dl--sub">
+				<dt>アクター</dt>
+				<dd>対象のアクターを指定します。</dd>
+				<dt>プロフィール</dt>
+				<dd>変更後のプロフィールを指定します。</dd>
+			</dl>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>

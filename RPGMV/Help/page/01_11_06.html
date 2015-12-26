@@ -1,0 +1,477 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja" id="main">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>iOSアプリへの変換＜ipaファイルの作成＞</title>
+	<link rel="stylesheet" href="../inc/css/style.min.css" />
+	<script type="text/javascript" src="../inc/js/lib/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="../inc/js/common.js"></script>
+</head>
+<body>
+
+	<div class="main">
+
+		<h1 class="main__title--h1 main__title--h1--v06">iOSアプリへの変換<br />＜ipaファイルの作成＞</h1>
+		<ul class="breadcrumb">
+			<li><a href="01.html">RPGツクールMV</a></li>
+			<li>&gt;</li>
+			<li>資料集</li>
+			<li>&gt;</li>
+			<li>iOSアプリへの変換＜ipaファイルの作成＞</li>
+		</ul>
+
+
+		<div class="main__section" id="p01">
+			<h2 class="main__title--h2">1 概要</h2>
+			<p>
+				RPGツクールMVで制作されたゲーム（以下ツクールゲーム）は、本バージョンよりWebGL・2DCanvasやWebAudio、JavaScriptといったいわゆるHTML5の技術をサポートするブラウザで動作します。HTML5のサポートが進んでいるiPhone、iPad（以下iOS端末）に搭載されているSafariでもツクールゲームのプレイを楽しめます。<br />
+				<br />
+				ここでは、Safariでのプレイではなく、iOSアプリとして楽しむ方法を解説しています。iOS端末でアプリとしてHTML5ゲームを動作させる事は、いわばHTML5対応ブラウザをiOSアプリとして包んで動作させるようなものです。このような、Webアプリをネイティブアプリのように動作させる開発方法は“ハイブリットアプリ”などと呼ばれ、クロスプラットフォームで動作することから人気があります。<br />
+				<br />
+				アプリとして包むブラウザは、Webの表示や音声再生を担う“ブラウザエンジン”で、iOS内蔵のものを使います（UIWebViewと呼びます）。ブラウザエンジンをアプリとしてつなぐフレームワークはいくつかありますが、ここでは［<a href="https://cordova.apache.org/" target="_blank">Apache Cordova（アパッチ コルドバ）</a>］というフレームワークを使います。
+			</p>
+			<h3 class="main__title--h3--sub">対象OS</h3>
+			<p>ハイブリッドアプリの手法では、ひとつのゲームを様々なプラットフォームで動作させることができますが、iOSアプリを作成する環境として基本的にはOS Xを搭載したMacが必要となります。ここではOS X 10.10を対象にしています。また、作業するPCの事を以下“Mac”と呼びます。</p>
+		</div><!-- /main__section -->
+
+		<div class="main__section" id="p02">
+			<h2 class="main__title--h2">2 パッケージングの環境を整える</h2>
+			<p>
+				iOS端末にツクールゲームをインストールするには、ipaファイルを作成する必要があります。ipaファイルとは、iOSアプリのインストーラーの事で、拡張子はipaです。ファイルは実際にはZIP形式で圧縮されており、アプリの動作に必要な様々なファイルが入っています。ここでは、ipaファイルを作成する事を“パッケージング”と呼びます。<br />
+				尚、開発ツール等必要なものを入手するためにはインターネット接続が必要です。
+			</p>
+			<h3 class="main__title--h3">2-1 Node.jsとApache Cordovaのインストール及び設定</h3>
+			<p>Node.jsとは、簡単にいうとブラウザ以外でJavaScriptを実行できる環境を提供するものです。CordovaはNode.jsのパッケージとして提供されていますので、まずはNode.jsをインストールしましょう。</p>
+
+			<h3 class="main__title--h3--sub">2-1-1 Node.jsのインストールと確認</h3>
+			<p><a href="https://nodejs.org/" target="_blank">https://nodejs.org/</a>より、［INSTALL］をクリックしインストーラーをダウンロードします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-1.png" height="622" width="1280" alt="" />
+			</div>
+			<p>インストーラーを起動します。管理者パスワードの入力を求められたらMacの管理者パスワードを入力し続行します。終了したらインストールは完了です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-2.png" height="438" width="620" alt="" />
+			</div>
+			<p>Node.jsのインストールをターミナルで確認してみます。ターミナルはアプリケーション→ユーティリティの中にあります。ターミナルが起動したらnode -vと入力しreturnキーを押します。インストールしたバージョンが表示されたらOKです。</p>
+<pre class="main__pre--code">
+$ node -v
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-3.png" height="366" width="585" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">2-1-2 Cordovaのインストール</h3>
+			<p>CordovaはNode.jsのパッケージとして提供されています。Node.jsにはパッケージ管理ツールであるnpmコマンドが用意されています。<br />
+				ターミナルでsudo npm install cordova -gと入力しCordovaをインストールします。sudoはMacの管理者として実行するものです。ここではnpmコマンドを管理者として実行します。-gオプションは、グローバル環境でCordovaを使えるようにするオプションで、これによりMacのどのフォルダ内でも使用できます。<br />
+				管理者パスワードを求められるので入力して続行します。</p>
+<pre class="main__pre--code">
+$ sudo npm install cordova -g
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-4.png" height="366" width="585" alt="" />
+			</div>
+			<p>Cordovaのバージョンを確認します。ターミナルにcordova -vと入力しreturnキーを押します。インストールしたバージョンが表示されればOKです。</p>
+<pre class="main__pre--code">
+$ cordova -v
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-5.png" height="366" width="585" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-2 Xcodeのインストールと設定</h3>
+			<p>ipaファイルにはiOS端末で動作させるために必要な様々なファイルが含まれます。それらをひとつのファイルにまとめるためにXcodeと呼ばれるMac専用のアプリが用意されています。Xcodeには本格的な開発が可能なツールも含まれます。</p>
+
+			<h3 class="main__title--h3--sub">2-2-1 Xcodeのインストール、設定</h3>
+			<p>XcodeはApp storeから無料で取得できます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-6.png" height="574" width="1000" alt="" />
+			</div>
+			<p>2015年8月時点での最新バージョンは6.4です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-7.png" height="470" width="802" alt="" />
+			</div>
+			<p>
+				Xcodeのコマンドラインツールとはターミナルから利用できる開発用コマンド群です。<br />
+				メニューの［Xcode］→［Preferences...］の［Locations］タブでコマンドラインツールが利用可能かチェックしておきます。無かった場合には左隣の［Downloads］タブから取得できます。
+			</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-8.png" height="466" width="750" alt="" />
+			</div>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/2-1-9.png" height="497" width="750" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">2-3 ios-simのインストール</h3>
+			<p>
+				ここでは、Cordovaから手軽にiOSシミュレーターを利用できるios-simを導入します。Node.jsでインストール可能です。<br />
+				ターミナルでsudo npm install ios-sim -gと入力してインストールします。<br />
+				ios-sim --versionと入力してバージョンが表示されればOKです。
+			</p>
+<pre class="main__pre--code">
+$ sudo npm install ios-sim -g
+</pre>
+
+<pre class="main__pre--code">
+$ ios-sim --version
+</pre>
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p03">
+			<h2 class="main__title--h2">3 ツクールでゲームのデプロイメント</h2>
+			<p>ツクールから、パッケージングに必要なゲームデータや素材、ゲームエンジンを書き出します。ファイルメニューより［デプロイメント...］を選択しデプロイメントダイアログを表示します。ここで［Android / iOS］を選択して書き出せば、iOSパッケージングに必要なファイルが選択したフォルダにすべて揃います。<br />
+			今回はデスクトップにデプロイメントしました。</p>
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p04">
+			<h2 class="main__title--h2">4 パッケージング</h2>
+			<p>パッケージングとは、iOS端末にアプリケーションをインストール可能なipaファイルを作成することです。</p>
+
+			<h3 class="main__title--h3">4-1 Xcodeプロジェクトの作成</h3>
+			<p>CordovaでXcodeのプロジェクトを作成します。最終的にはXcodeにてipaファイルを書き出すことになります。</p>
+
+			<h3 class="main__title--h3--sub">4-1-1 Cordovaテンプレートの作成</h3>
+			<p>まずcordovaコマンドのcreateオプションでテンプレートを作成します。ターミナルに入力するコマンドの例を挙げます。</p>
+
+<pre class="main__pre--code">
+$ cordova create ~/Desktop/work com.example.sample Sample
+</pre>
+
+			<p>上記ではデスクトップにworkという作業フォルダを作成しています。そのフォルダをテンプレートとしてパッケージ名をcom.example.sample、アプリ名をSampleとして設定します。<br />
+			<b>※実際にはcom.exampleというパッケージ名は使用できません。</b></p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-1.png" height="492" width="851" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-1-2 iOSプラットフォームの追加</h3>
+			<p>
+				Cordovaで使用するiOS固有ファイルをテンプレートに追加します。ターミナルにcd ~/Desktop/workと入力し先ほど作成したworkフォルダに移動します。
+				続けてcordova platform add iosとターミナルに入力しreturnキーを押します。これによりiOSでの動作に必要なファイルが作成されます。
+			</p>
+<pre class="main__pre--code">
+$ cd ~/Desktop/work
+$ cordova platform add ios
+</pre>
+
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-2.png" height="492" width="851" alt="" />
+			</div>
+			<p>
+				ios-simを使用しここまでの内容をiOSシミュレーターで確認してみましょう。<br />
+				ターミナルにcordova emulate iosと入力しreturnキーを押します。ビルドが終わると自動的にiOSシミュレーターが起動し、テンプレート画面が表示されます。
+			</p>
+<pre class="main__pre--code">
+$ cordova emulate ios
+</pre>
+
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-3.png" height="620" width="851" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-1-3 デプロイメントしたゲームのコピー</h3>
+			<p>3でデプロイしたゲームデータ等をworkフォルダ内のwwwフォルダへコピーします。すでにあるwork/wwwの中をすべて削除し、空にしてしまいましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-4.png" height="594" width="1148" alt="" />
+			</div>
+			<p>デプロイメントしたフォルダのwww内のファイルをすべてwork/www内にコピーします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-5.png" height="594" width="1148" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-1-4 index.htmlファイルの編集</h3>
+			<p>ゲームのHTMLをCordova向けに調整します。<br />
+			work/www/index.htmlをお好みのテキストエディタで開きます。<br />
+			書き加えるのは1行で、以下を&lt;body style="background-color: black"&gt;タグの下に加えます。</p>
+<pre class="main__pre--code">
+&lt;script type="text/javascript" src="cordova.js"&gt;&lt;/script&gt;
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-6.png" height="602" width="1125" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-1-5 config.xmlファイルの編集</h3>
+			<p>
+				ゲームアプリの動作を設定するconfig.xmlを調整します。ツクールゲームは横持ちに最適化されているので、画面を横向きにします。<br />
+				work/config.xmlをお好みのテキストエディタで開きます。<br />
+				&lt;platform name="ios"&gt;タグの中に以下を書き加えます。
+			</p>
+<pre class="main__pre--code">
+&lt;preference name="orientation" value="landscape" /&gt;
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-7.png" height="593" width="1130" alt="" />
+			</div>
+			<p>また、&lt;access origin="*"&gt;という行がありますが、ゲームのHTMLから外部のHTMLにアクセス可能にする設定です。<br />
+			必要ありませんので、この行は削除しておきましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-8.png" height="593" width="1141" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-1-6 ビルド</h3>
+			<p>
+				設定が終わりましたので、ビルドします。<br />
+				ターミナルでcordova buildと入力しreturnキーを押します。しばらくするとビルドが完了します。<br />
+			</p>
+<pre class="main__pre--code">
+$ cordova build
+</pre>
+			<p>
+				ここまでで、ゲームが起動できるまでの設定が終わりました。エミュレーターで確認してみましょう。<br />
+				先ほどと同様にターミナルにcordova emulate iosと入力します。
+			</p>
+<pre class="main__pre--code">
+$ cordova emulate ios
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-9.png" height="537" width="1001" alt="" />
+			</div>
+			<p>ゲームが起動しました。</p>
+
+			<h3 class="main__title--h3--sub">4-1-7 アイコンの変更</h3>
+			<p>アプリアイコンはwork/platforms/ios/アプリ名/Resources/iconsの中に格納されています。<br />
+			オリジナルのものを用意される場合は同じ大きさ、同じファイル名で置き換えてください。</p>
+
+			<h3 class="main__title--h3">4-2 プロビジョニングプロファイルの作成</h3>
+			<p>
+				iOS端末実機にインストール可能なipaファイルを作成するには“プロビジョニングプロファイル”と呼ばれるアプリ識別用ファイルが必要になります。<br />
+				プロビジョニングプロファイルを取得するには、Appleの［Apple Developer Program］への登録（有料）が必要です。<br />
+				<br />
+				また、パッケージへのプロビジョニングプロファイルの組み込み等の一連の操作をここでは署名と呼びます。署名には鍵ファイルや、鍵ファイルを証明する証明書ファイルなどが必要です。<br />
+				<b>※Apple Developer Programのサイトは度々更新され、プロビジョニングプロファイル取得方法等も変わる場合があります。操作がうまくいかない場合や、何かご不明な点がある場合は、<a href="https://developer.apple.com/jp/programs/" target="_blank">Apple Developer Program</a>へお問い合わせください。</b>
+			</p>
+
+			<h3 class="main__title--h3--sub">4-2-1 鍵ファイルの作成と証明書要求・登録</h3>
+			<p><b>ここで行う証明書の登録は、まだこの作業を行っていない場合だけ必要になります。</b><br />
+			まず、鍵ファイルを作成し、鍵ファイルの証明を要求します。証明要求には“キーチェーンアクセス”を使用します。<br />
+			キーチェーンアクセスは［アプリケーション］→［ユーティリティ］の中にあります。<br />
+			キーチェーンアクセスを起動し、メニューの［キーチェーンアクセス］から［証明書アシスタント］→［認証局に証明書を要求］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-10.png" height="617" width="1026" alt="" />
+			</div>
+			<p>ユーザーのメールアドレスにはApple Developer Programに登録したメールアドレス、通称にわかりやすい名前をつけます。要求の処理は［ディスクに保存］にし、［鍵ペア情報を指定］にチェックを入れます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-11.png" height="579" width="900" alt="" />
+			</div>
+			<p>要求ファイルを保存します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-12.png" height="579" width="900" alt="" />
+			</div>
+			<p>Apple Developer Programのメンバーセンターから、［Certificates, Identifiers & Profiles］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-13.png" height="621" width="1280" alt="" />
+			</div>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-14.png" height="585" width="982" alt="" />
+			</div>
+			<p>［Certificate］を選択ると証明書管理画面に移ります。左ペインでAllを選択し、右上の［+］ボタンをクリックします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-15.png" height="585" width="982" alt="" />
+			</div>
+			<p>証明書のタイプは［App Store and Ad Hoc］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-16.png" height="585" width="982" alt="" />
+			</div>
+			<p>画面を進めます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-17.png" height="585" width="982" alt="" />
+			</div>
+			<p>要求ファイルの選択画面で、キーチェーンアクセスで作成した要求ファイルを指定します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-18.png" height="585" width="982" alt="" />
+			</div>
+			<p>これで証明書が発行されました。証明書をダウンロードします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-19.png" height="585" width="982" alt="" />
+			</div>
+			<p>ダウンロードした証明書をダブルクリックすれば、キーチェーンアクセスに取り込まれます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-20.png" height="459" width="865" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-2-2 App IDの作成</h3>
+			<p>続いて、作成するパッケージを対象にApp IDを作成します。<br />
+			先ほど使用したサイト、Apple Developer Programの［Identifiers］で行います。<br />
+			左ペインで［Identifiers］の［App IDs］を選択し、右上の［+］ボタンをクリックします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-21.png" height="585" width="982" alt="" />
+			</div>
+			<p>［App ID Description］の［Name］にわかりやすい名前を入力します。<br />
+			［App ID Suffix］の［Explicit App ID］に［Bundle ID］を入力します。所有するドメインを記入例のようにトップレベルドメイン（例ではcom）から逆に使用し、“.（ドット）”でつなぎます。最後に固有のゲーム名（例ではsample）をつなげます。<br />
+			<b>※example.comは実際には使用できないので注意してください。</b><br />
+			<br />
+			記入例：<br />お持ちのドメインが［example.com］で固有のゲーム名が［Sample］の場合<br />
+			com.example.sample
+			</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-22.png" height="585" width="982" alt="" />
+			</div>
+			<p>下部から適切なオプションを選択し、［continue］をクリックし最後まで進みます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-23.png" height="585" width="982" alt="" />
+			</div>
+			<p>App IDが作成されました。Identifierにプレフィックスが付いています（ここではW96〜）これは後に必要となるのでメモをとっておくとよいでしょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-24.png" height="585" width="982" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-2-3 端末の登録</h3>
+			<p>お使いの端末にインストールできるよう、UDIDを登録します。登録は引き続きApple Developer Programのサイトで行います。<br />
+			UDIDとはiOS端末それぞれ固有の番号で、iTunesで確認することができます。端末をMacにつなげ、iTunesを起動します。iOS端末の概要で［シリアル番号］が確認できますが、ここをクリックすることでUDIDが表示されます。右クリックでコピーしておきましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-25.png" height="724" width="1246" alt="" />
+			</div>
+			<p>Apple Developer Programの左ペインから［Devices］の［All］を選択し、右上の［+］ボタンをクリックします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-26.png" height="586" width="982" alt="" />
+			</div>
+			<p>［Name］にわかりやすい名前を入力し、［UDID］に先ほどコピーした番号を貼り付け、［Continue］、［Register］をクリックすると登録されます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-27.png" height="586" width="982" alt="" />
+			</div>
+
+			<h3 class="main__title--h3--sub">4-2-4 プロビジョニングプロファイルの作成と登録</h3>
+			<p>引き続きApple Developer Programのサイトで作業します。<br />
+			左ペインの［Provisioning Profiles］から［All］を選択し、右上の［+］ボタンをクリックします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-28.png" height="586" width="982" alt="" />
+			</div>
+			<p>タイプは［Distribution］の［Ad Hoc］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-29.png" height="586" width="982" alt="" />
+			</div>
+			<p>［App ID］は先ほど作成したものを使用します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-30.png" height="586" width="982" alt="" />
+			</div>
+			<p>証明書は4-2-1で作成したものを選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-31.png" height="586" width="982" alt="" />
+			</div>
+			<p>同様に、［Device］も先ほど追加した端末を指定します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-32.png" height="586" width="982" alt="" />
+			</div>
+			<p>［Profile Name］にはわかりやすい名前を入力しましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-33.png" height="586" width="982" alt="" />
+			</div>
+			<p>以上で完了です。プロビジョニングプロファイルをダウンロードしておきます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-34.png" height="586" width="982" alt="" />
+			</div>
+			<p>ダウンロードしたプロビジョニングファイルをダブルクリックすると、［iPhone構成ユーティリティ］が起動し、プロビジョニングファイルが取り込まれます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-35.png" height="662" width="1008" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">4-3 ipaファイルへパッケージング</h3>
+			<p>実機にインストール可能なipaファイルを作成します。ここではお持ちのiOS端末にインストール可能なipaファイルを作成します。</p>
+
+			<h3 class="main__title--h3--sub">4-3-1 アーカイブと署名</h3>
+			<p>ターミナルで作業フォルダを開きます。ターミナルにcd ~/Desktop/workと入力しreturnキーを押します。<br />
+			Cordovaで生成されたxcodeprojファイルをXcodeで開きます。ターミナルにopen platforms/ios/Sample.xcodeprojと入力しreturnキーを押します。</p>
+<pre class="main__pre--code">
+$ cd ~/Desktop/work
+$ open platforms/ios/Sample.xcodeproj
+</pre>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-36.png" height="478" width="830" alt="" />
+			</div>
+			<p>Xcodeが起動します。左ペインで［Sample］を選択し、プロジェクト設定を開きます。対象をiOS Deviceにし、実機用にビルド可能な状態にしておきましょう。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-37.png" height="652" width="1280" alt="" />
+			</div>
+			<p>［Bundle Identifier］を4-2-2で設定した［App IDのIdentifier］と合わせておきます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-38.png" height="652" width="1280" alt="" />
+			</div>
+			<p>念のため、プロジェクトをクリーンな状態にしておきます。ファイルメニューから［Product］→［Clean］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-39.png" height="652" width="1280" alt="" />
+			</div>
+			<p>アーカイブを行い、すべてのファイルをひとつにまとめます。［Product］→［Archive］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-40.png" height="652" width="1280" alt="" />
+			</div>
+			<p>アーカイブが成功するとOrganizerウィンドウが開き、このプロジェクトのアーカイブが表示されます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-41.png" height="652" width="1280" alt="" />
+			</div>
+			<p>アーカイブを右クリックし、［Show in Finder］を選択すると、アーカイブファイルの位置をFinderで開くことが可能です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-42.png" height="652" width="1280" alt="" />
+			</div>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-43.png" height="652" width="1280" alt="" />
+			</div>
+			<p>/Users/ユーザー名/Library/Developer/Xcode/Archives/日付/、とかなり深い場所にアーカイブされます。<br />
+				このままOrganizer右ペインの［Export...］からパッケージを書き出すこともできますが、ここでは明示的にプロビジョニングプロファイルを指定したいため、ターミナルからパッケージを書き出します。ターミナルで書き出すにはxcodebuildコマンドを使用します。<br />
+				下記にコマンドの例を挙げます。</p>
+<pre class="main__pre--code">
+$ xcodebuild -exportArchive -archivePath ~/Library/Developer/Xcode/Archives/2015-07-29/Sample\ 2015-07-29\ 18.32.xcarchive/ -exportProvisioningProfile "sample" -exportPath ~/Desktop/sample.ipa
+</pre>
+			<p>expportArchiveオプションでは、アーカイブをipaファイルに書き出すことを指定しています。<br />
+			archivePathオプションで先ほど作成したアーカイブファイルを指定します。<br />
+			exportProvisioningProfileオプションでプロビジョニングプロファイルを指定します。4-2-4にてiPhone構成ユーティリティに登録したものです。二重引用符で括ってあげましょう。<br />
+			exportPathオプションでipaファイルのパスを指定します。ここではデスクトップにsample.ipaを書き出しています。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-44.png" height="464" width="956" alt="" />
+			</div>
+			<p>EXPORT SUCCEEDEDと表示されれば終了です。署名化されたipaファイルが書き出されます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-45.png" height="464" width="956" alt="" />
+			</div>
+
+			<h3 class="main__title--h3">4-4 実機にインストール</h3>
+			<p>実機にインストールするにはiTunesを利用します。<br />
+			お持ちのiOS端末をMacに接続し、iTunesを起動します。［マイApp］リストに先ほど作成したipaファイルをドラッグ＆ドロップします。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-46.png" height="566" width="1100" alt="" />
+			</div>
+			<p>端末のApp設定を開きます。先ほどドラッグ＆ドロップしたアプリを右の画面上へドラッグ＆ドロップし、右下の［適用］ボタンをクリックするとゲームがインストールされます。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-47.png" height="566" width="1100" alt="" />
+			</div>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-48.png" height="566" width="1100" alt="" />
+			</div>
+			<p><b>※4-2-4でプロビジョニングプロファイルに追加した端末以外はインストールできません。</b></p>
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p05">
+			<h2 class="main__title--h2">5 App Storeへの公開</h2>
+			<p>App Storeへの公開はApp Store用のプロビジョニングプロファイルが必要です。<br />
+			プロビジョニングプロファイルのタイプは［App Store］を選択します。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/5-1-1.png" height="586" width="982" alt="" />
+			</div>
+			<p>App Storeのアプリ審査にはXcodeを使うと便利です。アーカイブを行う前に、App Store用のプロビジョニングプロファイルなどを設定しておきましょう。プロジェクト設定の［Build Setting］に、［Code Singning］の指定があります。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/5-1-2.png" height="652" width="1280" alt="" />
+			</div>
+			<p>Organizerの右ペインに［Submit to App Store］ボタンがありますので、ここからパッケージファイルを提出可能です。</p>
+			<div class="al-c mb20px">
+				<img src="../inc/img/01_11_06/4-1-41.png" height="652" width="1280" alt="" />
+			</div>
+			<p><b>※アイコンやスプラシュスクリーン・紹介用画像などはオリジナルのものが必要になります。詳しくは専門書籍などをご参照ください。</b></p>
+		</div><!-- /main__section -->
+
+
+		<div class="main__section" id="p06">
+			<h2 class="main__title--h2">注意</h2>
+			<ul class="main__ul">
+				<li>環境設定やコマンド操作でMacに起きたいかなる不具合も保証いたしません。</li>
+				<li>ここで紹介している方法で開発できるiOSゲームアプリは、すべてがApp Storeで公開できることを保証するものではありません。</li>
+				<li>2015年8月時点での情報となります。ここで利用している各ソフトウェア等は常にアップデートされているため、表記と異なる場合があります。</li>
+				<li>［App Storeへの公開］に関してのご不明な点はApple Developer Support［<a href="https://developer.apple.com/jp/support/appstore/app-review/" target="_blank">アプリケーション審査</a>］をご覧ください。</li>
+			</ul>
+		</div><!-- /main__section -->
+
+	</div><!-- /main -->
+
+</body>
+</html>
+
+
