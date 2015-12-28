@@ -1,6 +1,8 @@
 [
 null,
 {"id":1,"expanded":false,"name":"MAP001","order":1,"parentId":0,"scrollX":832,"scrollY":640},
-{"id":2,"expanded":false,"name":"熱田駅前","order":2,"parentId":0,"scrollX":451,"scrollY":312.5},
-{"id":3,"expanded":false,"name":"熱田陸橋","order":3,"parentId":0,"scrollX":816,"scrollY":304.5}
+{"id":2,"expanded":false,"name":"熱田駅前","order":2,"parentId":0,"scrollX":498.5,"scrollY":351.5},
+{"id":3,"expanded":true,"name":"熱田陸橋","order":3,"parentId":0,"scrollX":317.5,"scrollY":272.5},
+null,
+{"id":5,"expanded":false,"name":"交差点","order":4,"parentId":0,"scrollX":484.5,"scrollY":351.5}
 ]
