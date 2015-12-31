@@ -793,7 +793,14 @@
         "conditionParam2": 0, 
         "conditionType": 0, 
         "rating": 5, 
-        "skillId": 1
+        "skillId": 15
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 16
       }
     ], 
     "battlerHue": 0, 
@@ -824,9 +831,9 @@
       100, 
       0, 
       10, 
+      30, 
       10, 
-      10, 
-      10, 
+      30, 
       10, 
       10
     ], 

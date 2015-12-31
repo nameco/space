@@ -105,7 +105,7 @@
     "pitch": 100, 
     "volume": 90
   }, 
-  "editMapId": 5, 
+  "editMapId": 2, 
   "elements": [
     "", 
     "\u7269\u7406", 
@@ -496,7 +496,7 @@
       "level": 1
     }
   ], 
-  "testTroopId": 9, 
+  "testTroopId": 10, 
   "title1Name": "Gates", 
   "title2Name": "", 
   "titleBgm": {
@@ -528,7 +528,7 @@
     "", 
     ""
   ], 
-  "versionId": 35422833, 
+  "versionId": 95516830, 
   "victoryMe": {
     "name": "Victory1", 
     "pan": 0, 
