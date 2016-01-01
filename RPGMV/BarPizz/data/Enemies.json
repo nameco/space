@@ -676,9 +676,9 @@
     "battlerName": "Vampire", 
     "dropItems": [
       {
-        "dataId": 1, 
-        "denominator": 1, 
-        "kind": 0
+        "dataId": 6, 
+        "denominator": 3, 
+        "kind": 1
       }, 
       {
         "dataId": 1, 
@@ -1241,9 +1241,9 @@
     "battlerName": "Werewolf", 
     "dropItems": [
       {
-        "dataId": 1, 
-        "denominator": 1, 
-        "kind": 0
+        "dataId": 6, 
+        "denominator": 5, 
+        "kind": 1
       }, 
       {
         "dataId": 1, 

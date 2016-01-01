@@ -523,7 +523,7 @@
     "damage": {
       "critical": false, 
       "elementId": 1, 
-      "formula": "b.hp / 2", 
+      "formula": "b.hp / 3", 
       "type": 1, 
       "variance": 20
     }, 
