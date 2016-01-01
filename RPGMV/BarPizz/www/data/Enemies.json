@@ -504,9 +504,9 @@
     "name": "\u304f\u308a\u306b\u3063\u304f\u534a\u8535", 
     "note": "", 
     "params": [
-      50, 
+      20, 
       0, 
-      8, 
+      7, 
       5, 
       1, 
       1, 
@@ -606,7 +606,7 @@
         "conditionParam1": 0, 
         "conditionParam2": 0, 
         "conditionType": 0, 
-        "rating": 5, 
+        "rating": 4, 
         "skillId": 13
       }
     ], 
@@ -697,9 +697,9 @@
     "name": "\u30de\u30c4\u30b3\u30fb\u30f4\u30e9\u30c9\u4f2f\u7235", 
     "note": "", 
     "params": [
-      20, 
+      15, 
       0, 
-      9, 
+      7, 
       5, 
       5, 
       5, 
