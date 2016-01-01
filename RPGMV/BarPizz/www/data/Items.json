@@ -1,13 +1,334 @@
 [
-null,
-{"id":1,"animationId":41,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[{"code":11,"dataId":0,"value1":0,"value2":500}],"hitType":0,"iconIndex":176,"itypeId":1,"name":"ポーション","note":"","occasion":0,"price":50,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":2,"animationId":41,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[{"code":12,"dataId":0,"value1":0,"value2":200}],"hitType":0,"iconIndex":176,"itypeId":1,"name":"マジックウォーター","note":"","occasion":0,"price":100,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":3,"animationId":45,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[{"code":22,"dataId":4,"value1":1,"value2":0},{"code":22,"dataId":5,"value1":1,"value2":0},{"code":22,"dataId":6,"value1":1,"value2":0},{"code":22,"dataId":7,"value1":1,"value2":0},{"code":22,"dataId":8,"value1":1,"value2":0},{"code":22,"dataId":9,"value1":1,"value2":0},{"code":22,"dataId":10,"value1":1,"value2":0}],"hitType":0,"iconIndex":176,"itypeId":1,"name":"ディスペルハーブ","note":"","occasion":0,"price":200,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":4,"animationId":49,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"b.mhp / 2","type":3,"variance":20},"description":"","effects":[{"code":22,"dataId":1,"value1":1,"value2":0}],"hitType":0,"iconIndex":176,"itypeId":1,"name":"スティミュラント","note":"","occasion":0,"price":300,"repeats":1,"scope":9,"speed":0,"successRate":100,"tpGain":0},
-{"id":5,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"日本の公衆電話で使用できるプリペイドカードである。\n - Wikipedia","effects":[],"hitType":0,"iconIndex":188,"itypeId":1,"name":"テレホンカード","note":"","occasion":3,"price":0,"repeats":1,"scope":0,"speed":0,"successRate":100,"tpGain":0},
-{"id":6,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[],"hitType":0,"iconIndex":0,"itypeId":1,"name":"","note":"","occasion":0,"price":0,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":7,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[],"hitType":0,"iconIndex":0,"itypeId":1,"name":"","note":"","occasion":0,"price":0,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":8,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[],"hitType":0,"iconIndex":0,"itypeId":1,"name":"","note":"","occasion":0,"price":0,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":9,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[],"hitType":0,"iconIndex":0,"itypeId":1,"name":"","note":"","occasion":0,"price":0,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0},
-{"id":10,"animationId":0,"consumable":true,"damage":{"critical":false,"elementId":0,"formula":"0","type":0,"variance":20},"description":"","effects":[],"hitType":0,"iconIndex":0,"itypeId":1,"name":"","note":"","occasion":0,"price":0,"repeats":1,"scope":7,"speed":0,"successRate":100,"tpGain":0}
+  null, 
+  {
+    "animationId": 41, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [
+      {
+        "code": 11, 
+        "dataId": 0, 
+        "value1": 0, 
+        "value2": 500
+      }
+    ], 
+    "hitType": 0, 
+    "iconIndex": 176, 
+    "id": 1, 
+    "itypeId": 1, 
+    "name": "\u30dd\u30fc\u30b7\u30e7\u30f3", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 50, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 41, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [
+      {
+        "code": 12, 
+        "dataId": 0, 
+        "value1": 0, 
+        "value2": 200
+      }
+    ], 
+    "hitType": 0, 
+    "iconIndex": 176, 
+    "id": 2, 
+    "itypeId": 1, 
+    "name": "\u30de\u30b8\u30c3\u30af\u30a6\u30a9\u30fc\u30bf\u30fc", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 100, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 45, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [
+      {
+        "code": 22, 
+        "dataId": 4, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 5, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 6, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 7, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 8, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 9, 
+        "value1": 1, 
+        "value2": 0
+      }, 
+      {
+        "code": 22, 
+        "dataId": 10, 
+        "value1": 1, 
+        "value2": 0
+      }
+    ], 
+    "hitType": 0, 
+    "iconIndex": 176, 
+    "id": 3, 
+    "itypeId": 1, 
+    "name": "\u30c7\u30a3\u30b9\u30da\u30eb\u30cf\u30fc\u30d6", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 200, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 49, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "b.mhp / 2", 
+      "type": 3, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value1": 1, 
+        "value2": 0
+      }
+    ], 
+    "hitType": 0, 
+    "iconIndex": 176, 
+    "id": 4, 
+    "itypeId": 1, 
+    "name": "\u30b9\u30c6\u30a3\u30df\u30e5\u30e9\u30f3\u30c8", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 300, 
+    "repeats": 1, 
+    "scope": 9, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 0, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "\u65e5\u672c\u306e\u516c\u8846\u96fb\u8a71\u3067\u4f7f\u7528\u3067\u304d\u308b\u30d7\u30ea\u30da\u30a4\u30c9\u30ab\u30fc\u30c9\u3067\u3042\u308b\u3002\n - Wikipedia", 
+    "effects": [], 
+    "hitType": 0, 
+    "iconIndex": 188, 
+    "id": 5, 
+    "itypeId": 1, 
+    "name": "\u30c6\u30ec\u30db\u30f3\u30ab\u30fc\u30c9", 
+    "note": "", 
+    "occasion": 3, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 0, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 37, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [
+      {
+        "code": 21, 
+        "dataId": 11, 
+        "value1": 0.5, 
+        "value2": 0
+      }
+    ], 
+    "hitType": 0, 
+    "iconIndex": 229, 
+    "id": 6, 
+    "itypeId": 1, 
+    "name": "\u3046\u3059\u3044\u307b\u3093", 
+    "note": "", 
+    "occasion": 1, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 2, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 0, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [], 
+    "hitType": 0, 
+    "iconIndex": 0, 
+    "id": 7, 
+    "itypeId": 1, 
+    "name": "", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 0, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [], 
+    "hitType": 0, 
+    "iconIndex": 0, 
+    "id": 8, 
+    "itypeId": 1, 
+    "name": "", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 0, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [], 
+    "hitType": 0, 
+    "iconIndex": 0, 
+    "id": 9, 
+    "itypeId": 1, 
+    "name": "", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }, 
+  {
+    "animationId": 0, 
+    "consumable": true, 
+    "damage": {
+      "critical": false, 
+      "elementId": 0, 
+      "formula": "0", 
+      "type": 0, 
+      "variance": 20
+    }, 
+    "description": "", 
+    "effects": [], 
+    "hitType": 0, 
+    "iconIndex": 0, 
+    "id": 10, 
+    "itypeId": 1, 
+    "name": "", 
+    "note": "", 
+    "occasion": 0, 
+    "price": 0, 
+    "repeats": 1, 
+    "scope": 7, 
+    "speed": 0, 
+    "successRate": 100, 
+    "tpGain": 0
+  }
 ]

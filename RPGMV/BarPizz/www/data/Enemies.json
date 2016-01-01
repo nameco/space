@@ -1,23 +1,1299 @@
 [
-null,
-{"id":1,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Bat","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"こうもり","note":"","params":[200,0,30,30,30,30,30,30]},
-{"id":2,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Slime","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"スライム","note":"","params":[250,0,30,30,30,30,30,30]},
-{"id":3,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Orc","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"オーク","note":"","params":[300,0,30,30,30,30,30,30]},
-{"id":4,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Minotaur","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"ミノタウロス","note":"","params":[500,0,30,30,30,30,30,30]},
-{"id":5,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":1,"skillId":1},{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":2,"skillId":7},{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":1,"skillId":11}],"battlerHue":144,"battlerName":"Slime","dropItems":[{"kind":0,"dataId":0,"denominator":1},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":3,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":3,"name":"なめこスライム","note":"","params":[1,0,1,1,1,1,1,10]},
-{"id":6,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":4,"skillId":1},{"conditionParam1":0,"conditionParam2":0.75,"conditionType":2,"rating":5,"skillId":8}],"battlerHue":231,"battlerName":"Jellyfish","dropItems":[{"kind":1,"dataId":5,"denominator":5},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":5,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":5,"name":"ざくをメデューズ","note":"","params":[12,10,4,3,5,3,5,5]},
-{"id":7,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1},{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":9}],"battlerHue":177,"battlerName":"Firespirit","dropItems":[{"kind":1,"dataId":5,"denominator":3},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":6,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":6,"name":"きくいちの炎","note":"","params":[15,10,1,1,5,5,5,10]},
-{"id":8,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1},{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":3}],"battlerHue":0,"battlerName":"Assassin","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"くりにっく半蔵","note":"","params":[500,0,100,100,1,1,200,10]},
-{"id":9,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":6}],"battlerHue":281,"battlerName":"Windspirit","dropItems":[{"kind":1,"dataId":5,"denominator":1},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":50,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":1,"name":"ななみスピリット","note":"","params":[2,0,2,15,1,100,100,10]},
-{"id":10,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":12},{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":13}],"battlerHue":0,"battlerName":"Ghost","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"のほほの霊","note":"","params":[5,50,5,5,5,5,5,5]},
-{"id":11,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Vampire","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"マツコ・ヴラド伯爵","note":"","params":[70,0,15,5,5,5,5,5]},
-{"id":12,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Mage","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"メイジジャガー","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":13,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Irongiant","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"二足歩行式装甲戦闘車両オックン","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":14,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Goddess","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"女神MIU","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":15,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Earthspirit","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"セリトの精","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":16,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Garuda","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"すみか鳥","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":17,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":257,"battlerName":"Actor2_5","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"魔法使い黒咲","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":18,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Angel","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"エンジェルなみ","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":19,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Dragon","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"レンジャードラゴン","note":"","params":[100,0,10,10,10,10,10,10]},
-{"id":20,"actions":[{"conditionParam1":0,"conditionParam2":0,"conditionType":0,"rating":5,"skillId":1}],"battlerHue":0,"battlerName":"Werewolf","dropItems":[{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0},{"dataId":1,"denominator":1,"kind":0}],"exp":0,"traits":[{"code":22,"dataId":0,"value":0.95},{"code":22,"dataId":1,"value":0.05},{"code":31,"dataId":1,"value":0}],"gold":0,"name":"おおかみつう","note":"","params":[100,0,10,10,10,10,10,10]}
+  null, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Bat", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 1, 
+    "name": "\u3053\u3046\u3082\u308a", 
+    "note": "", 
+    "params": [
+      200, 
+      0, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Slime", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 2, 
+    "name": "\u30b9\u30e9\u30a4\u30e0", 
+    "note": "", 
+    "params": [
+      250, 
+      0, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Orc", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 3, 
+    "name": "\u30aa\u30fc\u30af", 
+    "note": "", 
+    "params": [
+      300, 
+      0, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Minotaur", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 4, 
+    "name": "\u30df\u30ce\u30bf\u30a6\u30ed\u30b9", 
+    "note": "", 
+    "params": [
+      500, 
+      0, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30, 
+      30
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 1, 
+        "skillId": 1
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 2, 
+        "skillId": 7
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 1, 
+        "skillId": 11
+      }
+    ], 
+    "battlerHue": 144, 
+    "battlerName": "Slime", 
+    "dropItems": [
+      {
+        "dataId": 0, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 3, 
+    "gold": 3, 
+    "id": 5, 
+    "name": "\u306a\u3081\u3053\u30b9\u30e9\u30a4\u30e0", 
+    "note": "", 
+    "params": [
+      1, 
+      0, 
+      1, 
+      1, 
+      1, 
+      1, 
+      1, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 4, 
+        "skillId": 1
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0.75, 
+        "conditionType": 2, 
+        "rating": 5, 
+        "skillId": 8
+      }
+    ], 
+    "battlerHue": 231, 
+    "battlerName": "Jellyfish", 
+    "dropItems": [
+      {
+        "dataId": 5, 
+        "denominator": 5, 
+        "kind": 1
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 5, 
+    "gold": 5, 
+    "id": 6, 
+    "name": "\u3056\u304f\u3092\u30e1\u30c7\u30e5\u30fc\u30ba", 
+    "note": "", 
+    "params": [
+      12, 
+      10, 
+      4, 
+      3, 
+      5, 
+      3, 
+      5, 
+      5
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 9
+      }
+    ], 
+    "battlerHue": 177, 
+    "battlerName": "Firespirit", 
+    "dropItems": [
+      {
+        "dataId": 5, 
+        "denominator": 3, 
+        "kind": 1
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 6, 
+    "gold": 6, 
+    "id": 7, 
+    "name": "\u304d\u304f\u3044\u3061\u306e\u708e", 
+    "note": "", 
+    "params": [
+      15, 
+      10, 
+      1, 
+      1, 
+      5, 
+      5, 
+      5, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 3
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Assassin", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 8, 
+    "name": "\u304f\u308a\u306b\u3063\u304f\u534a\u8535", 
+    "note": "", 
+    "params": [
+      50, 
+      0, 
+      8, 
+      5, 
+      1, 
+      1, 
+      200, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 6
+      }
+    ], 
+    "battlerHue": 281, 
+    "battlerName": "Windspirit", 
+    "dropItems": [
+      {
+        "dataId": 5, 
+        "denominator": 1, 
+        "kind": 1
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 50, 
+    "gold": 1, 
+    "id": 9, 
+    "name": "\u306a\u306a\u307f\u30b9\u30d4\u30ea\u30c3\u30c8", 
+    "note": "", 
+    "params": [
+      2, 
+      0, 
+      2, 
+      15, 
+      1, 
+      100, 
+      100, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 12
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 13
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Ghost", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 10, 
+    "name": "\u306e\u307b\u307b\u306e\u970a", 
+    "note": "", 
+    "params": [
+      5, 
+      50, 
+      5, 
+      5, 
+      5, 
+      5, 
+      5, 
+      5
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Vampire", 
+    "dropItems": [
+      {
+        "dataId": 6, 
+        "denominator": 3, 
+        "kind": 1
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 11, 
+    "name": "\u30de\u30c4\u30b3\u30fb\u30f4\u30e9\u30c9\u4f2f\u7235", 
+    "note": "", 
+    "params": [
+      20, 
+      0, 
+      9, 
+      5, 
+      5, 
+      5, 
+      5, 
+      5
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Mage", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 12, 
+    "name": "\u30e1\u30a4\u30b8\u30b8\u30e3\u30ac\u30fc", 
+    "note": "", 
+    "params": [
+      30, 
+      0, 
+      1, 
+      10, 
+      10, 
+      10, 
+      1, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 15
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 16
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Irongiant", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 13, 
+    "name": "\u4e8c\u8db3\u6b69\u884c\u5f0f\u88c5\u7532\u6226\u95d8\u8eca\u4e21\u30aa\u30c3\u30af\u30f3", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      30, 
+      10, 
+      30, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Goddess", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 14, 
+    "name": "\u5973\u795eMIU", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 7
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Earthspirit", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 15, 
+    "name": "\u30bb\u30ea\u30c8\u306e\u7cbe", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Garuda", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 16, 
+    "name": "\u3059\u307f\u304b\u9ce5", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 257, 
+    "battlerName": "Actor2_5", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 17, 
+    "name": "\u9b54\u6cd5\u4f7f\u3044\u9ed2\u54b2", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Angel", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 18, 
+    "name": "\u30a8\u30f3\u30b8\u30a7\u30eb\u306a\u307f", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Dragon", 
+    "dropItems": [
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 19, 
+    "name": "\u30ec\u30f3\u30b8\u30e3\u30fc\u30c9\u30e9\u30b4\u30f3", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }, 
+  {
+    "actions": [
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
+        "skillId": 1
+      }
+    ], 
+    "battlerHue": 0, 
+    "battlerName": "Werewolf", 
+    "dropItems": [
+      {
+        "dataId": 6, 
+        "denominator": 5, 
+        "kind": 1
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }, 
+      {
+        "dataId": 1, 
+        "denominator": 1, 
+        "kind": 0
+      }
+    ], 
+    "exp": 0, 
+    "gold": 0, 
+    "id": 20, 
+    "name": "\u304a\u304a\u304b\u307f\u3064\u3046", 
+    "note": "", 
+    "params": [
+      100, 
+      0, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10, 
+      10
+    ], 
+    "traits": [
+      {
+        "code": 22, 
+        "dataId": 0, 
+        "value": 0.95
+      }, 
+      {
+        "code": 22, 
+        "dataId": 1, 
+        "value": 0.05
+      }, 
+      {
+        "code": 31, 
+        "dataId": 1, 
+        "value": 0
+      }
+    ]
+  }
 ]
