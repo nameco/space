@@ -79,7 +79,7 @@
     "damage": {
       "critical": true, 
       "elementId": -1, 
-      "formula": "a.atk * 1 - b.def * 2", 
+      "formula": "1 + Math.max(0, a.atk * 3 - b.def * 2)", 
       "type": 1, 
       "variance": 20
     }, 
@@ -95,7 +95,7 @@
     "hitType": 1, 
     "iconIndex": 76, 
     "id": 3, 
-    "message1": "\u306e\u653b\u6483\uff01", 
+    "message1": "\u306e\u9023\u7d9a\u653b\u6483\uff01", 
     "message2": "", 
     "mpCost": 0, 
     "name": "\u9023\u7d9a\u653b\u6483", 
@@ -253,7 +253,7 @@
     "tpGain": 10
   }, 
   {
-    "animationId": 41, 
+    "animationId": 43, 
     "damage": {
       "critical": false, 
       "elementId": 0, 
@@ -269,13 +269,13 @@
     "message1": "\u306f%1\u3092\u5531\u3048\u305f\uff01", 
     "message2": "", 
     "mpCost": 5, 
-    "name": "\u30d2\u30fc\u30eb", 
+    "name": "\u30d2\u30fc\u30eb\u30d7\u30e9\u30b9", 
     "note": "", 
     "occasion": 0, 
     "repeats": 1, 
     "requiredWtypeId1": 0, 
     "requiredWtypeId2": 0, 
-    "scope": 7, 
+    "scope": 8, 
     "speed": 0, 
     "stypeId": 1, 
     "successRate": 100, 
@@ -394,12 +394,24 @@
         "dataId": 3, 
         "value1": 3, 
         "value2": 0
+      }, 
+      {
+        "code": 32, 
+        "dataId": 2, 
+        "value1": 3, 
+        "value2": 0
+      }, 
+      {
+        "code": 32, 
+        "dataId": 2, 
+        "value1": 3, 
+        "value2": 0
       }
     ], 
     "hitType": 2, 
     "iconIndex": 0, 
     "id": 12, 
-    "message1": "\u306e\u546a\u3044\u3002\u9632\u5fa1\u529b\u306e\u4f4e\u4e0b\uff01", 
+    "message1": "\u306e\u546a\u3044\u306b\u5305\u307e\u308c\u305f\u3002", 
     "message2": "", 
     "mpCost": 0, 
     "name": "\u546a\u3044", 
@@ -434,7 +446,7 @@
       }, 
       {
         "code": 32, 
-        "dataId": 3, 
+        "dataId": 2, 
         "value1": 3, 
         "value2": 0
       }
@@ -442,7 +454,7 @@
     "hitType": 0, 
     "iconIndex": 0, 
     "id": 13, 
-    "message1": "\u306e\u546a\u3044\u3002\u9632\u5fa1\u529b\u306e\u4f4e\u4e0b\uff01", 
+    "message1": "\u306e\u546a\u3044\u306b\u5305\u307e\u308c\u305f\u3002", 
     "message2": "", 
     "mpCost": 0, 
     "name": "\u546a\u3044", 

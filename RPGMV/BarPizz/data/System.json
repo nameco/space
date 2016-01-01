@@ -460,7 +460,7 @@
         3, 
         0
       ], 
-      "level": 9
+      "level": 10
     }, 
     {
       "actorId": 0, 
@@ -496,7 +496,7 @@
       "level": 1
     }
   ], 
-  "testTroopId": 10, 
+  "testTroopId": 9, 
   "title1Name": "Gates", 
   "title2Name": "", 
   "titleBgm": {
@@ -528,7 +528,7 @@
     "", 
     ""
   ], 
-  "versionId": 50306711, 
+  "versionId": 19098483, 
   "victoryMe": {
     "name": "Victory1", 
     "pan": 0, 

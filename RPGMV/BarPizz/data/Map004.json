@@ -1345,7 +1345,33 @@
   ], 
   "disableDashing": false, 
   "displayName": "", 
-  "encounterList": [], 
+  "encounterList": [
+    {
+      "regionSet": [], 
+      "troopId": 7, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 9, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 8, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 10, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 11, 
+      "weight": 5
+    }
+  ], 
   "encounterStep": 10, 
   "events": [
     null, 
