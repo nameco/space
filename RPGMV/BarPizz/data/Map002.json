@@ -2202,6 +2202,24 @@
               ]
             }, 
             {
+              "code": 355, 
+              "indent": 1, 
+              "parameters": [
+                "console.log(window.$gameActors._data[1]._exp)"
+              ]
+            }, 
+            {
+              "code": 122, 
+              "indent": 1, 
+              "parameters": [
+                1, 
+                1, 
+                0, 
+                4, 
+                "window.$gameActors._data[1]._exp[2]"
+              ]
+            }, 
+            {
               "code": 0, 
               "indent": 1, 
               "parameters": []
