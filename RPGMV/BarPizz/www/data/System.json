@@ -168,8 +168,8 @@
   }, 
   "skillTypes": [
     "", 
-    "", 
-    ""
+    "\u9b54\u6cd5", 
+    "\u7279\u6280"
   ], 
   "sounds": [
     {
@@ -460,7 +460,7 @@
         3, 
         0
       ], 
-      "level": 10
+      "level": 7
     }, 
     {
       "actorId": 0, 
@@ -496,7 +496,7 @@
       "level": 1
     }
   ], 
-  "testTroopId": 9, 
+  "testTroopId": 10, 
   "title1Name": "Gates", 
   "title2Name": "", 
   "titleBgm": {
@@ -528,7 +528,7 @@
     "", 
     ""
   ], 
-  "versionId": 87148655, 
+  "versionId": 72579119, 
   "victoryMe": {
     "name": "Victory1", 
     "pan": 0, 

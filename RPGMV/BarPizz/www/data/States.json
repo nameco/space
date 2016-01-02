@@ -191,12 +191,12 @@
     "chanceByDamage": 50, 
     "iconIndex": 5, 
     "id": 7, 
-    "maxTurns": 4, 
+    "maxTurns": 2, 
     "message1": "\u306f\u6fc0\u6602\u3057\u305f\uff01", 
     "message2": "\u3092\u6fc0\u6602\u3055\u305b\u305f\uff01", 
     "message3": "", 
     "message4": "\u306f\u6211\u306b\u8fd4\u3063\u305f\uff01", 
-    "minTurns": 2, 
+    "minTurns": 1, 
     "motion": 1, 
     "name": "\u6fc0\u6602", 
     "note": "", 
@@ -209,7 +209,13 @@
     "removeByWalking": false, 
     "restriction": 1, 
     "stepsToRemove": 100, 
-    "traits": []
+    "traits": [
+      {
+        "code": 21, 
+        "dataId": 2, 
+        "value": 2
+      }
+    ]
   }, 
   {
     "autoRemovalTiming": 1, 
