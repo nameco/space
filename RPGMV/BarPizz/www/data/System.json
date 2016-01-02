@@ -105,7 +105,7 @@
     "pitch": 100, 
     "volume": 90
   }, 
-  "editMapId": 4, 
+  "editMapId": 2, 
   "elements": [
     "", 
     "\u7269\u7406", 
@@ -508,7 +508,7 @@
   "variables": [
     "", 
     "", 
-    "", 
+    "\u30ea\u30e5\u30fc\u306d\u30ec\u30d9\u30eb", 
     "", 
     "", 
     "", 
@@ -528,7 +528,7 @@
     "", 
     ""
   ], 
-  "versionId": 72579119, 
+  "versionId": 35431989, 
   "victoryMe": {
     "name": "Victory1", 
     "pan": 0, 

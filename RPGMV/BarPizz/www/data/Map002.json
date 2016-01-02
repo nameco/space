@@ -2202,6 +2202,24 @@
               ]
             }, 
             {
+              "code": 355, 
+              "indent": 1, 
+              "parameters": [
+                "console.log(window.$gameActors._data[1]._exp)"
+              ]
+            }, 
+            {
+              "code": 122, 
+              "indent": 1, 
+              "parameters": [
+                1, 
+                1, 
+                0, 
+                4, 
+                "window.$gameActors._data[1]._exp[2]"
+              ]
+            }, 
+            {
               "code": 0, 
               "indent": 1, 
               "parameters": []
@@ -2254,7 +2272,115 @@
       "x": 12, 
       "y": 10
     }, 
-    null
+    {
+      "id": 5, 
+      "name": "EV005", 
+      "note": "", 
+      "pages": [
+        {
+          "conditions": {
+            "actorId": 1, 
+            "actorValid": false, 
+            "itemId": 1, 
+            "itemValid": false, 
+            "selfSwitchCh": "A", 
+            "selfSwitchValid": false, 
+            "switch1Id": 1, 
+            "switch1Valid": false, 
+            "switch2Id": 1, 
+            "switch2Valid": false, 
+            "variableId": 1, 
+            "variableValid": false, 
+            "variableValue": 0
+          }, 
+          "directionFix": false, 
+          "image": {
+            "characterIndex": 0, 
+            "characterName": "", 
+            "direction": 2, 
+            "pattern": 0, 
+            "tileId": 0
+          }, 
+          "list": [
+            {
+              "code": 122, 
+              "indent": 0, 
+              "parameters": [
+                2, 
+                2, 
+                0, 
+                3, 
+                3, 
+                1, 
+                0
+              ]
+            }, 
+            {
+              "code": 111, 
+              "indent": 0, 
+              "parameters": [
+                1, 
+                2, 
+                0, 
+                2, 
+                1
+              ]
+            }, 
+            {
+              "code": 318, 
+              "indent": 1, 
+              "parameters": [
+                0, 
+                1, 
+                0, 
+                20
+              ]
+            }, 
+            {
+              "code": 0, 
+              "indent": 1, 
+              "parameters": []
+            }, 
+            {
+              "code": 412, 
+              "indent": 0, 
+              "parameters": []
+            }, 
+            {
+              "code": 214, 
+              "indent": 0, 
+              "parameters": []
+            }, 
+            {
+              "code": 0, 
+              "indent": 0, 
+              "parameters": []
+            }
+          ], 
+          "moveFrequency": 3, 
+          "moveRoute": {
+            "list": [
+              {
+                "code": 0, 
+                "parameters": []
+              }
+            ], 
+            "repeat": true, 
+            "skippable": false, 
+            "wait": false
+          }, 
+          "moveSpeed": 3, 
+          "moveType": 0, 
+          "priorityType": 0, 
+          "stepAnime": false, 
+          "through": false, 
+          "trigger": 3, 
+          "walkAnime": true
+        }
+      ], 
+      "x": 12, 
+      "y": 1
+    }
   ], 
   "height": 13, 
   "note": "", 
