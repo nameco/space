@@ -339,6 +339,20 @@
         "conditionType": 2, 
         "rating": 5, 
         "skillId": 8
+      }, 
+      {
+        "conditionParam1": 0.75, 
+        "conditionParam2": 1, 
+        "conditionType": 2, 
+        "rating": 4, 
+        "skillId": 2
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 4, 
+        "skillId": 19
       }
     ], 
     "battlerHue": 231, 
@@ -498,8 +512,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 10, 
+    "gold": 10, 
     "id": 8, 
     "name": "\u304f\u308a\u306b\u3063\u304f\u534a\u8535", 
     "note": "", 
@@ -629,8 +643,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 10, 
+    "gold": 10, 
     "id": 10, 
     "name": "\u306e\u307b\u307b\u306e\u970a", 
     "note": "", 
@@ -691,8 +705,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 10, 
+    "gold": 10, 
     "id": 11, 
     "name": "\u30de\u30c4\u30b3\u30fb\u30f4\u30e9\u30c9\u4f2f\u7235", 
     "note": "", 
@@ -731,7 +745,7 @@
         "conditionParam2": 0, 
         "conditionType": 0, 
         "rating": 5, 
-        "skillId": 1
+        "skillId": 10
       }
     ], 
     "battlerHue": 0, 
@@ -753,8 +767,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 10, 
+    "gold": 10, 
     "id": 12, 
     "name": "\u30e1\u30a4\u30b8\u30b8\u30e3\u30ac\u30fc", 
     "note": "", 
@@ -822,8 +836,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 20, 
+    "gold": 20, 
     "id": 13, 
     "name": "\u4e8c\u8db3\u6b69\u884c\u5f0f\u88c5\u7532\u6226\u95d8\u8eca\u4e21\u30aa\u30c3\u30af\u30f3", 
     "note": "", 
@@ -884,13 +898,13 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 20, 
+    "gold": 20, 
     "id": 14, 
     "name": "\u5973\u795eMIU", 
     "note": "", 
     "params": [
-      100, 
+      30, 
       0, 
       10, 
       10, 
@@ -924,14 +938,14 @@
         "conditionParam2": 0, 
         "conditionType": 0, 
         "rating": 5, 
-        "skillId": 1
+        "skillId": 7
       }, 
       {
         "conditionParam1": 0, 
         "conditionParam2": 0, 
         "conditionType": 0, 
-        "rating": 5, 
-        "skillId": 7
+        "rating": 4, 
+        "skillId": 18
       }
     ], 
     "battlerHue": 0, 
@@ -953,13 +967,13 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 15, 
+    "gold": 15, 
     "id": 15, 
     "name": "\u30bb\u30ea\u30c8\u306e\u7cbe", 
     "note": "", 
     "params": [
-      100, 
+      30, 
       0, 
       10, 
       10, 
@@ -1015,8 +1029,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 15, 
+    "gold": 15, 
     "id": 16, 
     "name": "\u3059\u307f\u304b\u9ce5", 
     "note": "", 
@@ -1077,8 +1091,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 20, 
+    "gold": 20, 
     "id": 17, 
     "name": "\u9b54\u6cd5\u4f7f\u3044\u9ed2\u54b2", 
     "note": "", 
@@ -1139,8 +1153,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 15, 
+    "gold": 15, 
     "id": 18, 
     "name": "\u30a8\u30f3\u30b8\u30a7\u30eb\u306a\u307f", 
     "note": "", 
@@ -1179,6 +1193,13 @@
         "conditionParam2": 0, 
         "conditionType": 0, 
         "rating": 5, 
+        "skillId": 17
+      }, 
+      {
+        "conditionParam1": 0, 
+        "conditionParam2": 0, 
+        "conditionType": 0, 
+        "rating": 5, 
         "skillId": 1
       }
     ], 
@@ -1201,8 +1222,8 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 15, 
+    "gold": 15, 
     "id": 19, 
     "name": "\u30ec\u30f3\u30b8\u30e3\u30fc\u30c9\u30e9\u30b4\u30f3", 
     "note": "", 
@@ -1263,13 +1284,13 @@
         "kind": 0
       }
     ], 
-    "exp": 0, 
-    "gold": 0, 
+    "exp": 12, 
+    "gold": 12, 
     "id": 20, 
     "name": "\u304a\u304a\u304b\u307f\u3064\u3046", 
     "note": "", 
     "params": [
-      100, 
+      20, 
       0, 
       10, 
       10, 

@@ -1370,6 +1370,26 @@
       "regionSet": [], 
       "troopId": 11, 
       "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 12, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 13, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 14, 
+      "weight": 5
+    }, 
+    {
+      "regionSet": [], 
+      "troopId": 15, 
+      "weight": 5
     }
   ], 
   "encounterStep": 10, 
@@ -1603,7 +1623,7 @@
           "priorityType": 0, 
           "stepAnime": false, 
           "through": false, 
-          "trigger": 0, 
+          "trigger": 1, 
           "walkAnime": true
         }
       ], 

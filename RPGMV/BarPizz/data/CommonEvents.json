@@ -4,12 +4,23 @@
     "id": 1, 
     "list": [
       {
+        "code": 326, 
+        "indent": 0, 
+        "parameters": [
+          0, 
+          1, 
+          1, 
+          0, 
+          100
+        ]
+      }, 
+      {
         "code": 0, 
         "indent": 0, 
         "parameters": []
       }
     ], 
-    "name": "", 
+    "name": "TP\u5168\u6d88\u8cbb", 
     "switchId": 1, 
     "trigger": 0
   }, 
